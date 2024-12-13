@@ -9,4 +9,5 @@ Other useful resources are:
 - https://github.com/RatchetModding/rac-modding-resources
 - https://github.com/RatchetModding/slimseditor
 - https://github.com/maikelwever/rac-savegame-editor
+- https://github.com/stiantoften/RC-checksum
 - https://docs.google.com/spreadsheets/d/1uZBCG_QkMCzCIdYgSZr1CfKIFTNrRYJrNMuQDCtAOWo/preview
