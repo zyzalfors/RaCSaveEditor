@@ -1,5 +1,5 @@
 # RaC Save Editor
-This GUI tool allows users to read and edit save files for the PlayStation 2 games Ratchet & Clank 1, 2, 3, and Deadlocked.
+This GUI tool allows users to read and edit save files for the PlayStation 2 games Ratchet & Clank 1, 2, 3, Deadlocked/Gladiator.
 
 It supports reading and editing .bin files for all game versions.
 
