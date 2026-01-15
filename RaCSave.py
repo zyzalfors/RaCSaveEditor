@@ -19,9 +19,11 @@ class RaCSave:
                            "Shock Blaster": (716, 4, True), "N60 Storm": (748, 4, True), "Infector": (780, 4, True), "Annihilator": (812, 4, True), "Spitting Hydra": (844, 4, True),
                            "Disc Blade Gun": (876, 4, True), "Glove of Doom": (908, 4, True), "Rift Inducer": (940, 4, True), "Holoshield Glove": (972, 4, True), "Flux Rifle": (1004, 4, True),
                            "Nitro Launcher": (1036, 4, True), "Plasma Whip": (1068, 4, True), "RYNO III": (1164, 4, True), "Language": (11279, 1, True)},
-                  "rac4": {"Bolts": (36, 4, True), "Nanotech": (44, 4, True), "Dread Points": (48, 4, True), "Bolts Multiplier": (66, 1, False), "Dual Vipers": (3038, 2, True),
-                           "Magma Cannon": (3106, 2, True), "Arbiter": (3174, 2, True), "Fusion Rifle": (3242, 2, True), "Hunter Mine Launcher": (3310, 2, True), "B6-Obliterator": (3378, 2, True),
-                           "Holoshield Launcher": (3446, 2, True), "Miniturret Launcher": (3514, 2, True), "Harbinger": (3582, 2, True), "Scorpion Flail": (3922, 2, True), "Language": (30785, 1, True)}}
+                  "rac4": {"Bolts": (36, 4, True), "Nanotech": (44, 4, True), "Dread Points": (48, 4, True), "Bolts Multiplier": (66, 1, False), "Speed Mod": (325, 1, True),
+                           "Ammo Mod": (326, 1, True), "Aiming Mod": (327, 1, True), "Impact Mod": (328, 1, True), "Area Mod": (329, 1, True), "XP Mod": (330, 1, True),
+                           "Jackpot Mod": (331, 1, True), "Nanoleech Mod": (332, 1, True), "Dual Vipers": (3038, 2, True), "Magma Cannon": (3106, 2, True), "Arbiter": (3174, 2, True),
+                           "Fusion Rifle": (3242, 2, True), "Hunter Mine Launcher": (3310, 2, True), "B6-Obliterator": (3378, 2, True), "Holoshield Launcher": (3446, 2, True), "Miniturret Launcher": (3514, 2, True),
+                           "Harbinger": (3582, 2, True), "Scorpion Flail": (3922, 2, True), "Language": (30785, 1, True)}}
 
     ITEM_OFFSETS = {"rac1": {"Zoomerator": 88, "Raritanium": 89, "CodeBot": 90, "Heli-Pack": 442, "Thruster-Pack": 443,
                              "Hydro-Pack": 444, "Sonic Summoner": 445, "O2 Mask": 446, "Pilot Helmet": 447, "Suck Cannon": 449,
