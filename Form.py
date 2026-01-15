@@ -24,7 +24,7 @@ class Form(tkinter.Tk):
 
     def initGUI(self):
         self.title("RaC Save Editor")
-        self.geometry("380x700")
+        self.geometry("410x700")
         self.resizable(False, False)
 
         menuBar = tkinter.Menu(self)
@@ -103,7 +103,7 @@ class Form(tkinter.Tk):
         nb.add(valuesTab, text = "Values")
 
         y = 0
-        x = 100
+        x = 130
 
         label = tkinter.Label(valuesTab, text = "Path:")
         label.place(anchor = "nw", y = y)
