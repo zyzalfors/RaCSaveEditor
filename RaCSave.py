@@ -5,25 +5,25 @@ class RaCSave:
 
     LANGUAGES = {"EN": 0, "FR": 2, "DE": 3, "ES": 4 ,"IT": 5}
 
-    VALUE_DATA = {"rac1": {"Bolts": (36, 4, True), "Completed": (48, 1, True), "Bomb Glove": (324, 4, True), "Devastator": (328, 4, True), "Visibomb Gun": (336, 4, True),
-                           "Blaster": (344, 4, True), "Pyrocitor": (348, 4, True), "Mine Glove": (352, 4, True), "Tesla Claw": (360, 4, True), "Glove of Doom": (364, 4, True),
-                           "RYNO": (376, 4, True), "Drone Device": (380, 4, True), "Decoy Glove": (384, 4, True)},
-                  "rac2": {"Bolts": (36, 4, True), "Raritanium": (40, 4, True), "Completed": (54, 1, True), "Nanotech": (56, 4, True), "Crystals": (70, 2, True),
-                           "Moonstones": (72, 2, False), "Bolts Multiplier": (94, 1, False), "Clank Zapper": (460, 4, True), "Bomb Glove": (472, 4, True), "Visibomb Gun": (480, 4, True),
-                           "Decoy Glove": (492, 4, True), "Tesla Claw": (496, 4, True), "Chopper": (512, 4, True), "Pulse Rifle": (516, 4, True), "Seeker Gun": (520, 4, True),
-                           "Hoverbomb Gun": (524, 4, True), "Blitz Gun": (528, 4, True), "Minirocket Tube": (532, 4, True), "Plasma Coil": (536, 4, True), "Lava Gun": (540, 4, True),
-                           "Lancer": (544, 4, True), "Synthenoid": (548, 4, True), "Spiderbot Glove": (552, 4, True), "Bouncer": (572, 4, True), "Miniturret Glove": (588, 4, True),
-                           "Gravity Bomb": (592, 4, True), "Zodiac": (596, 4, True), "RYNO II": (600, 4, True), "Shield Charger": (604, 4, True), "Language": (6264, 1, True)},
-                  "rac3": {"Bolts": (36, 4, True), "Completed": (86, 1, True), "Nanotech": (88, 4, True), "Crystals": (102, 2, True), "Bolts Multiplier": (126, 1, False),
-                           "Plasma Coil": (624, 4, True), "Lava Gun": (628, 4, True), "Bouncer": (636, 4, True), "Miniturret Glove": (644, 4, True), "Shield Charger": (648, 4, True),
-                           "Shock Blaster": (716, 4, True), "N60 Storm": (748, 4, True), "Infector": (780, 4, True), "Annihilator": (812, 4, True), "Spitting Hydra": (844, 4, True),
-                           "Disc Blade Gun": (876, 4, True), "Glove of Doom": (908, 4, True), "Rift Inducer": (940, 4, True), "Holoshield Glove": (972, 4, True), "Flux Rifle": (1004, 4, True),
-                           "Nitro Launcher": (1036, 4, True), "Plasma Whip": (1068, 4, True), "RYNO III": (1164, 4, True), "Language": (11279, 1, True)},
-                  "rac4": {"Bolts": (36, 4, True), "Nanotech": (44, 4, True), "Dread Points": (48, 4, True), "Bolts Multiplier": (66, 1, False), "Speed Mod": (325, 1, True),
-                           "Ammo Mod": (326, 1, True), "Aiming Mod": (327, 1, True), "Impact Mod": (328, 1, True), "Area Mod": (329, 1, True), "XP Mod": (330, 1, True),
-                           "Jackpot Mod": (331, 1, True), "Nanoleech Mod": (332, 1, True), "Dual Vipers": (3038, 2, True), "Magma Cannon": (3106, 2, True), "Arbiter": (3174, 2, True),
-                           "Fusion Rifle": (3242, 2, True), "Hunter Mine Launcher": (3310, 2, True), "B6-Obliterator": (3378, 2, True), "Holoshield Launcher": (3446, 2, True), "Miniturret Launcher": (3514, 2, True),
-                           "Harbinger": (3582, 2, True), "Scorpion Flail": (3922, 2, True), "Language": (30785, 1, True)}}
+    VALUE_DATA = {"rac1": {"Bolts": (36, 4, 2147483647), "Completed": (48, 1, 255), "Bomb Glove": (324, 4, 2147483647), "Devastator": (328, 4, 2147483647), "Visibomb Gun": (336, 4, 2147483647),
+                           "Blaster": (344, 4, 2147483647), "Pyrocitor": (348, 4, 2147483647), "Mine Glove": (352, 4, 2147483647), "Tesla Claw": (360, 4, 2147483647), "Glove of Doom": (364, 4, 2147483647),
+                           "RYNO": (376, 4, 2147483647), "Drone Device": (380, 4, 2147483647), "Decoy Glove": (384, 4, 2147483647)},
+                  "rac2": {"Bolts": (36, 4, 2147483647), "Raritanium": (40, 4, 2147483647), "Completed": (54, 1, 255), "Nanotech": (56, 4, 204778415), "Crystals": (70, 2, 32767),
+                           "Moonstones": (72, 2, 65535), "Bolts Multiplier": (94, 1, 255), "Clank Zapper": (460, 4, 2147483647), "Bomb Glove": (472, 4, 2147483647), "Visibomb Gun": (480, 4, 2147483647),
+                           "Decoy Glove": (492, 4, 2147483647), "Tesla Claw": (496, 4, 2147483647), "Chopper": (512, 4, 2147483647), "Pulse Rifle": (516, 4, 2147483647), "Seeker Gun": (520, 4, 2147483647),
+                           "Hoverbomb Gun": (524, 4, 2147483647), "Blitz Gun": (528, 4, 2147483647), "Minirocket Tube": (532, 4, 2147483647), "Plasma Coil": (536, 4, 2147483647), "Lava Gun": (540, 4, 2147483647),
+                           "Lancer": (544, 4, 2147483647), "Synthenoid": (548, 4, 2147483647), "Spiderbot Glove": (552, 4, 2147483647), "Bouncer": (572, 4, 2147483647), "Miniturret Glove": (588, 4, 2147483647),
+                           "Gravity Bomb": (592, 4, 2147483647), "Zodiac": (596, 4, 2147483647), "RYNO II": (600, 4, 2147483647), "Shield Charger": (604, 4, 2147483647), "Language": (6264, 1, 5)},
+                  "rac3": {"Bolts": (36, 4, 2147483647), "Completed": (86, 1, 255), "Nanotech": (88, 4, 61503510), "Crystals": (102, 2, 32767), "Bolts Multiplier": (126, 1, 255),
+                           "Plasma Coil": (624, 4, 2147483647), "Lava Gun": (628, 4, 2147483647), "Bouncer": (636, 4, 2147483647), "Miniturret Glove": (644, 4, 2147483647), "Shield Charger": (648, 4, 2147483647),
+                           "Shock Blaster": (716, 4, 2147483647), "N60 Storm": (748, 4, 2147483647), "Infector": (780, 4, 2147483647), "Annihilator": (812, 4, 2147483647), "Spitting Hydra": (844, 4, 2147483647),
+                           "Disc Blade Gun": (876, 4, 2147483647), "Glove of Doom": (908, 4, 2147483647), "Rift Inducer": (940, 4, 2147483647), "Holoshield Glove": (972, 4, 2147483647), "Flux Rifle": (1004, 4, 2147483647),
+                           "Nitro Launcher": (1036, 4, 2147483647), "Plasma Whip": (1068, 4, 2147483647), "RYNO III": (1164, 4, 2147483647), "Language": (11279, 1, 5)},
+                  "rac4": {"Bolts": (36, 4, 2147483647), "Nanotech": (44, 4, 45281245), "Dread Points": (48, 4, 2147483647), "Bolts Multiplier": (66, 1, 255), "Speed Mod": (325, 1, 127),
+                           "Ammo Mod": (326, 1, 127), "Aiming Mod": (327, 1, 127), "Impact Mod": (328, 1, 127), "Area Mod": (329, 1, 127), "XP Mod": (330, 1, 127),
+                           "Jackpot Mod": (331, 1, 127), "Nanoleech Mod": (332, 1, 127), "Dual Vipers": (3038, 2, 32767), "Magma Cannon": (3106, 2, 32767), "Arbiter": (3174, 2, 32767),
+                           "Fusion Rifle": (3242, 2, 32767), "Hunter Mine Launcher": (3310, 2, 32767), "B6-Obliterator": (3378, 2, 32767), "Holoshield Launcher": (3446, 2, 32767), "Miniturret Launcher": (3514, 2, 32767),
+                           "Harbinger": (3582, 2, 32767), "Scorpion Flail": (3922, 2, 32767), "Language": (30785, 1, 5)}}
 
     ITEM_OFFSETS = {"rac1": {"Zoomerator": 88, "Raritanium": 89, "CodeBot": 90, "Heli-Pack": 442, "Thruster-Pack": 443,
                              "Hydro-Pack": 444, "Sonic Summoner": 445, "O2 Mask": 446, "Pilot Helmet": 447, "Suck Cannon": 449,
@@ -197,9 +197,8 @@ class RaCSave:
             val = self.LANGUAGES[val]
 
         else:
-            signed = data[name][2]
             val = re.sub(r"[^0-9]", "", val)
-            val = min(int(val), 2 ** (size * 8 - 1) - 1 if signed else 2 ** (size * 8) - 1)
+            val = min(int(val), data[name][2])
 
             if name == "Bolts Multiplier" and self.game != "rac2":
                 val -= 1
