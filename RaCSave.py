@@ -47,8 +47,8 @@ class RaCSave:
                              "Spitting Hydra": 1263, "Disc Blade Gun": 1271, "Glove of Doom": 1279, "Rift Inducer": 1287, "Holoshield Glove": 1295,
                              "Flux Rifle": 1303, "Nitro Launcher": 1311, "Plasma Whip": 1319, "Suck Cannon": 1327, "Qwack-o-ray": 1335,
                              "RYNO III": 1343},
-                    "rac4": {"Magma Cannon": 3104, "Arbiter": 3172, "Fusion Rifle": 3240, "Hunter Mine Launcher": 3308, "B6-Obliterator": 3376,
-                             "Holoshield Launcher": 3444, "Miniturret Launcher": 3512, "Harbinger": 3580, "Scorpion Flail": 3920}}
+                    "rac4": {"Arbiter": 3172, "Fusion Rifle": 3240, "Hunter Mine Launcher": 3308, "B6-Obliterator": 3376, "Holoshield Launcher": 3444,
+                             "Miniturret Launcher": 3512, "Harbinger": 3580, "Scorpion Flail": 3920}}
 
 
     def __init__(self, path, game):
