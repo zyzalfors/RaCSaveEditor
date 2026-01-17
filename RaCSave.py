@@ -217,5 +217,4 @@ class RaCSave:
         self.updateCrc16()
 
         with open(self.path, "wb") as f:
-
             f.write(self.bytes)
