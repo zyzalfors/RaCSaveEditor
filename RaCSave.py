@@ -67,7 +67,7 @@ class RaCSave:
         self.chunks = []
         offset = 8
 
-        while(offset < len(self.bytes)):
+        while offset < len(self.bytes):
             size = int.from_bytes(self.bytes[offset:(offset + 4)], byteorder = "little")
             crc16Offset = offset + 4
             dataOffset = offset + 8
@@ -217,4 +217,5 @@ class RaCSave:
         self.updateCrc16()
 
         with open(self.path, "wb") as f:
+
             f.write(self.bytes)
