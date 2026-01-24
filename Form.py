@@ -16,7 +16,7 @@ class Form(tkinter.Tk):
         self.save = None
         self.labels = []
         self.textboxes = []
-        self.langcombo = None
+        self.comboboxes = []
         self.checkboxes = []
         self.notebook = None
         self.initGUI()
@@ -71,8 +71,8 @@ class Form(tkinter.Tk):
         for textbox in self.textboxes:
             self.save.updateValue(textbox.name, textbox.get("1.0", tkinter.END))
 
-        if self.langcombo:
-            self.save.updateValue(self.langcombo.name, self.langcombo.getVal())
+        for combobox in self.comboboxes:
+            self.save.updateValue(combobox.name, combobox.getVal())
 
         for checkbox in self.checkboxes:
             self.save.updateItem(checkbox.name, bool(checkbox.isChecked()))
@@ -125,11 +125,14 @@ class Form(tkinter.Tk):
             label.place(anchor = "nw", y = y)
             self.labels.append(label)
 
-            if name != "Language":
-                self.textboxes.append(Textbox(valuesTab, name, x, y, val, False))
+            if name == "Language":
+                self.comboboxes.append(Combobox(valuesTab, name, x, y, val, self.save.LANGUAGES.keys()))
+
+            elif name == "Armor":
+                self.comboboxes.append(Combobox(valuesTab, name, x, y, val, self.save.ARMORS.keys()))
 
             else:
-                self.langcombo = Combobox(valuesTab, name, x, y, val, self.save.LANGUAGES.keys())
+                self.textboxes.append(Textbox(valuesTab, name, x, y, val, False))
 
         itemsTab = ttk.Frame(nb)
         nb.add(itemsTab, text = "Items")
@@ -158,10 +161,10 @@ class Form(tkinter.Tk):
 
         self.textboxes.clear()
 
-        if self.langcombo:
-            self.langcombo.destroy()
+        for combobox in self.comboboxes:
+            combobox.destroy()
 
-        self.langcombo = None
+        self.comboboxes.clear()
 
         for checkbox in self.checkboxes:
             checkbox.destroy()

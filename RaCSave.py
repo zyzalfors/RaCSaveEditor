@@ -3,7 +3,9 @@ import re
 class RaCSave:
     GAMES = ("rac1", "rac2", "rac3", "rac4")
 
-    LANGUAGES = {"EN": 0, "FR": 2, "DE": 3, "ES": 4 ,"IT": 5}
+    LANGUAGES = {"EN": 0, "FR": 2, "DE": 3, "ES": 4, "IT": 5}
+
+    ARMORS = {"None": 0, "1st": 1, "2nd": 2, "3rd": 3, "4th": 4}
 
     VALUE_DATA = {"rac1": {"Bolts": (36, 4, 2147483647), "Completed": (48, 1, 255), "Bomb Glove": (324, 4, 2147483647), "Devastator": (328, 4, 2147483647), "Visibomb Gun": (336, 4, 2147483647),
                            "Blaster": (344, 4, 2147483647), "Pyrocitor": (348, 4, 2147483647), "Mine Glove": (352, 4, 2147483647), "Tesla Claw": (360, 4, 2147483647), "Glove of Doom": (364, 4, 2147483647),
@@ -14,7 +16,7 @@ class RaCSave:
                            "Hoverbomb Gun": (524, 4, 2147483647), "Blitz Gun": (528, 4, 2147483647), "Minirocket Tube": (532, 4, 2147483647), "Plasma Coil": (536, 4, 2147483647), "Lava Gun": (540, 4, 2147483647),
                            "Lancer": (544, 4, 2147483647), "Synthenoid": (548, 4, 2147483647), "Spiderbot Glove": (552, 4, 2147483647), "Bouncer": (572, 4, 2147483647), "Miniturret Glove": (588, 4, 2147483647),
                            "Gravity Bomb": (592, 4, 2147483647), "Zodiac": (596, 4, 2147483647), "RYNO II": (600, 4, 2147483647), "Shield Charger": (604, 4, 2147483647), "Language": (6264, 1, 5)},
-                  "rac3": {"Bolts": (36, 4, 2147483647), "Completed": (86, 1, 255), "Nanotech": (88, 4, 61503510), "Crystals": (102, 2, 32767), "Bolts Multiplier": (126, 1, 255),
+                  "rac3": {"Bolts": (36, 4, 2147483647), "Completed": (86, 1, 255), "Nanotech": (88, 4, 61503510), "Armor": (100, 1, 4), "Crystals": (102, 2, 32767), "Bolts Multiplier": (126, 1, 255),
                            "Plasma Coil": (624, 4, 2147483647), "Lava Gun": (628, 4, 2147483647), "Bouncer": (636, 4, 2147483647), "Miniturret Glove": (644, 4, 2147483647), "Shield Charger": (648, 4, 2147483647),
                            "Shock Blaster": (716, 4, 2147483647), "N60 Storm": (748, 4, 2147483647), "Infector": (780, 4, 2147483647), "Annihilator": (812, 4, 2147483647), "Spitting Hydra": (844, 4, 2147483647),
                            "Disc Blade Gun": (876, 4, 2147483647), "Glove of Doom": (908, 4, 2147483647), "Rift Inducer": (940, 4, 2147483647), "Holoshield Glove": (972, 4, 2147483647), "Flux Rifle": (1004, 4, 2147483647),
@@ -176,6 +178,9 @@ class RaCSave:
             elif name == "Language":
                 val = next((lang for lang, byte in self.LANGUAGES.items() if byte == val), "")
 
+            elif name == "Armor":
+                val = next((armor for armor, byte in self.ARMORS.items() if byte == val), "")
+
             values.append((name, str(val)))
 
         return values
@@ -195,6 +200,12 @@ class RaCSave:
                 return
 
             val = self.LANGUAGES[val]
+
+        elif name == "Armor":
+            if not val in self.ARMORS:
+                return
+
+            val = self.ARMORS[val]
 
         else:
             val = re.sub(r"[^0-9]", "", val)
