@@ -10,7 +10,7 @@ class RaCSave:
     VALUE_DATA = {"rac1": {"Bolts": (36, 4, 2147483647), "Completed": (48, 1, 255), "Bomb Glove": (324, 4, 2147483647), "Devastator": (328, 4, 2147483647), "Visibomb Gun": (336, 4, 2147483647),
                            "Blaster": (344, 4, 2147483647), "Pyrocitor": (348, 4, 2147483647), "Mine Glove": (352, 4, 2147483647), "Tesla Claw": (360, 4, 2147483647), "Glove of Doom": (364, 4, 2147483647),
                            "RYNO": (376, 4, 2147483647), "Drone Device": (380, 4, 2147483647), "Decoy Glove": (384, 4, 2147483647)},
-                  "rac2": {"Bolts": (36, 4, 2147483647), "Raritanium": (40, 4, 2147483647), "Completed": (54, 1, 255), "Nanotech": (56, 4, 204778415), "Crystals": (70, 2, 32767),
+                  "rac2": {"Bolts": (36, 4, 2147483647), "Raritanium": (40, 4, 2147483647), "Completed": (54, 1, 255), "Nanotech": (56, 4, 204778415), "Armor": (68, 1, 4), "Crystals": (70, 2, 32767),
                            "Moonstones": (72, 2, 65535), "Bolts Multiplier": (94, 1, 255), "Clank Zapper": (460, 4, 2147483647), "Bomb Glove": (472, 4, 2147483647), "Visibomb Gun": (480, 4, 2147483647),
                            "Decoy Glove": (492, 4, 2147483647), "Tesla Claw": (496, 4, 2147483647), "Chopper": (512, 4, 2147483647), "Pulse Rifle": (516, 4, 2147483647), "Seeker Gun": (520, 4, 2147483647),
                            "Hoverbomb Gun": (524, 4, 2147483647), "Blitz Gun": (528, 4, 2147483647), "Minirocket Tube": (532, 4, 2147483647), "Plasma Coil": (536, 4, 2147483647), "Lava Gun": (540, 4, 2147483647),

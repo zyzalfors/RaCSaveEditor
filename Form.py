@@ -24,7 +24,7 @@ class Form(tkinter.Tk):
 
     def initGUI(self):
         self.title("RaC Save Editor")
-        self.geometry("410x700")
+        self.geometry("410x720")
         self.resizable(False, False)
 
         menuBar = tkinter.Menu(self)
