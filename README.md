@@ -3,7 +3,7 @@ This GUI tool allows users to read and edit save files for the PlayStation 2 gam
 
 It supports reading and editing .bin files for all game versions/regions.
 
-The tool enables modification of various properties, such as the amount of bolts, nanotech, weapons/items, ammo, and other collectibles like crystals and raritanium.
+The tool enables modification of various properties, such as the amount of bolts, nanotech, weapons/items, ammo, skill points, and other collectibles like crystals and raritanium.
 
 Additional useful resources include:
 - https://github.com/RatchetModding/rac-modding-resources
