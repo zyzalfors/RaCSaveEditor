@@ -27,33 +27,50 @@ class RaCSave:
                            "Fusion Rifle": (3242, 2, 32767), "Hunter Mine Launcher": (3310, 2, 32767), "B6-Obliterator": (3378, 2, 32767), "Holoshield Launcher": (3446, 2, 32767), "Miniturret Launcher": (3514, 2, 32767),
                            "Harbinger": (3582, 2, 32767), "Scorpion Flail": (3922, 2, 32767), "Language": (30785, 1, 5)}}
 
-    ITEM_OFFSETS = {"rac1": {"Zoomerator": 88, "Raritanium": 89, "CodeBot": 90, "Heli-Pack": 442, "Thruster-Pack": 443,
-                             "Hydro-Pack": 444, "Sonic Summoner": 445, "O2 Mask": 446, "Pilot Helmet": 447, "Suck Cannon": 449,
-                             "Devastator": 451, "Swingshot": 452, "Visibomb Gun": 453, "Taunter": 454, "Blaster": 455,
-                             "Pyrocitor": 456, "Mine Glove": 457, "Walloper": 458, "Tesla Claw": 459, "Glove of Doom": 460,
-                             "Morph-o-ray": 461, "Hydrodisplacer": 462, "RYNO": 463, "Drone Device": 464, "Decoy Glove": 465,
-                             "Trespasser": 466, "Metal Detector": 467, "Magneboots": 468, "Grind Boots": 469, "Hoverboard": 470,
-                             "Hologuise": 471, "PDA": 472, "Map-o-matic": 473, "Bolt Grabber": 474, "Persuader": 475},
-                    "rac2": {"Nanotech Boost 1": 84, "Nanotech Boost 2": 85, "Nanotech Boost 3": 86, "Nanotech Boost 4": 87, "Nanotech Boost 5": 88,
-                             "Nanotech Boost 6": 89, "Nanotech Boost 7": 90, "Nanotech Boost 8": 91, "Nanotech Boost 9": 92, "Nanotech Boost 10": 93,
-                             "Mapper": 661, "Armor Magnetizer": 663, "Levitator": 664, "Clank Zapper": 665, "Bomb Glove": 668,
-                             "Swingshot": 669, "Visibomb Gun": 670, "Sheepinator": 672, "Decoy Glove": 673, "Tesla Claw": 674,
-                             "Gravity Boots": 675, "Grind Boots": 676, "Glider": 677, "Chopper": 678, "Pulse Rifle": 679,
-                             "Seeker Gun": 680, "Hoverbomb Gun": 681 , "Blitz Gun": 682, "Minirocket Tube": 683, "Plasma Coil": 684,
-                             "Lava Gun": 685, "Synthenoid": 687, "Spiderbot Glove": 688, "Dynamo": 692, "Bouncer": 693,
-                             "Electrolyzer": 694, "Thermanator": 695, "Miniturret Glove": 697, "Zodiac": 699, "RYNO II": 700,
-                             "Shield Charger": 701, "Tractor Beam": 702, "Biker Helmet": 704, "Quark Statuette": 705, "Box Breaker": 706,
-                             "Infiltrator": 707, "Walloper": 709, "Charge Boots": 710, "Hypnomatic": 711},
-                    "rac3": {"Map-o-matic": 1197, "Bolt Grabber": 1199, "Hypershot": 1203, "Gravity Boots": 1205, "Plasma Coil": 1208,
-                             "Lava Gun": 1209, "Refractor": 1210, "Bouncer": 1211, "Hacker": 1212, "Miniturret Glove": 1213,
-                             "Shield Charger": 1214, "Charge Boots": 1221, "Thyrraguise": 1222, "Warp Pad": 1223, "Nano Pak": 1224,
-                             "PDA": 1227, "Shock Blaster": 1231, "N60 Storm": 1239, "Infector": 1247, "Annihilator": 1255,
-                             "Spitting Hydra": 1263, "Disc Blade Gun": 1271, "Glove of Doom": 1279, "Rift Inducer": 1287, "Holoshield Glove": 1295,
-                             "Flux Rifle": 1303, "Nitro Launcher": 1311, "Plasma Whip": 1319, "Suck Cannon": 1327, "Qwack-o-ray": 1335,
-                             "RYNO III": 1343},
-                    "rac4": {"Arbiter": 3172, "Fusion Rifle": 3240, "Hunter Mine Launcher": 3308, "B6-Obliterator": 3376, "Holoshield Launcher": 3444,
-                             "Miniturret Launcher": 3512, "Harbinger": 3580, "Scorpion Flail": 3920}}
-
+    UNLOCKABLE_DATA = {"rac1": {"Zoomerator": 88, "Raritanium": 89, "CodeBot": 90, "Skill point 1": 244, "Skill point 2": 245,
+                                "Skill point 3": 246, "Skill point 4": 247, "Skill point 5": 248, "Skill point 6": 249, "Skill point 7": 250,
+                                "Skill point 8": 251, "Skill point 9": 252, "Skill point 10": 253, "Skill point 11": 254, "Skill point 12": 255,
+                                "Skill point 13": 256, "Skill point 14": 257, "Skill point 15": 258, "Skill point 16": 259, "Skill point 17": 260,
+                                "Skill point 18": 261, "Skill point 19": 262, "Skill point 20": 263, "Skill point 21": 264, "Skill point 22": 265,
+                                "Skill point 23": 266, "Skill point 24": 267, "Skill point 25": 268, "Skill point 26": 269, "Skill point 27": 270,
+                                "Skill point 28": 271, "Skill point 29": 272, "Skill point 30": 273, "Heli-Pack": 442, "Thruster-Pack": 443,
+                                "Hydro-Pack": 444, "Sonic Summoner": 445, "O2 Mask": 446, "Pilot Helmet": 447, "Suck Cannon": 449,
+                                "Devastator": 451, "Swingshot": 452, "Visibomb Gun": 453, "Taunter": 454, "Blaster": 455,
+                                "Pyrocitor": 456, "Mine Glove": 457, "Walloper": 458, "Tesla Claw": 459, "Glove of Doom": 460,
+                                "Morph-o-ray": 461, "Hydrodisplacer": 462, "RYNO": 463, "Drone Device": 464, "Decoy Glove": 465,
+                                "Trespasser": 466, "Metal Detector": 467, "Magneboots": 468, "Grind Boots": 469, "Hoverboard": 470,
+                                "Hologuise": 471, "PDA": 472, "Map-o-matic": 473, "Bolt Grabber": 474, "Persuader": 475},
+                       "rac2": {"Nanotech Boost 1": 84, "Nanotech Boost 2": 85, "Nanotech Boost 3": 86, "Nanotech Boost 4": 87, "Nanotech Boost 5": 88,
+                                "Nanotech Boost 6": 89, "Nanotech Boost 7": 90, "Nanotech Boost 8": 91, "Nanotech Boost 9": 92, "Nanotech Boost 10": 93,
+                                "Skill point 1": 384, "Skill point 2": 385, "Skill point 3": 386, "Skill point 4": 387, "Skill point 5": 388,
+                                "Skill point 6": 389, "Skill point 7": 390, "Skill point 8": 391, "Skill point 9": 392, "Skill point 10": 393,
+                                "Skill point 11": 394, "Skill point 12": 395, "Skill point 13": 396, "Skill point 14": 397, "Skill point 15": 398,
+                                "Skill point 16": 399, "Skill point 17": 400, "Skill point 18": 401, "Skill point 19": 402, "Skill point 20": 403,
+                                "Skill point 21": 404, "Skill point 22": 405, "Skill point 23": 406, "Skill point 24": 407, "Skill point 25": 408,
+                                "Skill point 26": 409, "Skill point 27": 410, "Skill point 28": 411, "Skill point 29": 412, "Skill point 30": 413,
+                                "Mapper": 661, "Armor Magnetizer": 663, "Levitator": 664, "Clank Zapper": 665, "Bomb Glove": 668,
+                                "Swingshot": 669, "Visibomb Gun": 670, "Sheepinator": 672, "Decoy Glove": 673, "Tesla Claw": 674,
+                                "Gravity Boots": 675, "Grind Boots": 676, "Glider": 677, "Chopper": 678, "Pulse Rifle": 679,
+                                "Seeker Gun": 680, "Hoverbomb Gun": 681 , "Blitz Gun": 682, "Minirocket Tube": 683, "Plasma Coil": 684,
+                                "Lava Gun": 685, "Synthenoid": 687, "Spiderbot Glove": 688, "Dynamo": 692, "Bouncer": 693,
+                                "Electrolyzer": 694, "Thermanator": 695, "Miniturret Glove": 697, "Zodiac": 699, "RYNO II": 700,
+                                "Shield Charger": 701, "Tractor Beam": 702, "Biker Helmet": 704, "Quark Statuette": 705, "Box Breaker": 706,
+                                "Infiltrator": 707, "Walloper": 709, "Charge Boots": 710, "Hypnomatic": 711},
+                       "rac3": {"Skill point 1": 520, "Skill point 2": 521, "Skill point 3": 522, "Skill point 4": 523, "Skill point 5": 524,
+                                "Skill point 6": 525, "Skill point 7": 526, "Skill point 8": 527, "Skill point 9": 528, "Skill point 10": 529,
+                                "Skill point 11": 530, "Skill point 12": 531, "Skill point 13": 532, "Skill point 14": 533, "Skill point 15": 534,
+                                "Skill point 16": 535, "Skill point 17": 536, "Skill point 18": 537, "Skill point 19": 538, "Skill point 20": 539,
+                                "Skill point 21": 540, "Skill point 22": 541, "Skill point 23": 542, "Skill point 24": 543, "Skill point 25": 544,
+                                "Skill point 26": 545, "Skill point 27": 546, "Skill point 28": 547, "Skill point 29": 548, "Skill point 30": 549,
+                                "Map-o-matic": 1197, "Bolt Grabber": 1199, "Hypershot": 1203, "Gravity Boots": 1205, "Plasma Coil": 1208,
+                                "Lava Gun": 1209, "Refractor": 1210, "Bouncer": 1211, "Hacker": 1212, "Miniturret Glove": 1213,
+                                "Shield Charger": 1214, "Charge Boots": 1221, "Thyrraguise": 1222, "Warp Pad": 1223, "Nano Pak": 1224,
+                                "PDA": 1227, "Shock Blaster": 1231, "N60 Storm": 1239, "Infector": 1247, "Annihilator": 1255,
+                                "Spitting Hydra": 1263, "Disc Blade Gun": 1271, "Glove of Doom": 1279, "Rift Inducer": 1287, "Holoshield Glove": 1295,
+                                "Flux Rifle": 1303, "Nitro Launcher": 1311, "Plasma Whip": 1319, "Suck Cannon": 1327, "Qwack-o-ray": 1335,
+                                "RYNO III": 1343},
+                       "rac4": {"Arbiter": 3172, "Fusion Rifle": 3240, "Hunter Mine Launcher": 3308, "B6-Obliterator": 3376, "Holoshield Launcher": 3444,
+                                "Miniturret Launcher": 3512, "Harbinger": 3580, "Scorpion Flail": 3920}}
 
     def __init__(self, path, game):
         self.path = path
@@ -119,29 +136,29 @@ class RaCSave:
         return None, True
 
 
-    def getItems(self):
-        items = []
+    def getUnlockables(self):
+        unlockables = []
 
         if not self.game in self.GAMES:
-            return items
+            return unlockables
 
         if self.game != "rac4":
-            for name, offset in self.ITEM_OFFSETS[self.game].items():
-                items.append((name, self.bytes[offset]))
+            for name, offset in self.UNLOCKABLE_DATA[self.game].items():
+                unlockables.append((name, self.bytes[offset]))
 
         else:
-            for name, offset in self.ITEM_OFFSETS[self.game].items():
+            for name, offset in self.UNLOCKABLE_DATA[self.game].items():
                 val = int.from_bytes(self.bytes[offset:(offset + 2)], byteorder = "little")
-                items.append((name, int(val != 65535)))
+                unlockables.append((name, int(val != 65535)))
 
-        return items
+        return unlockables
 
 
-    def updateItem(self, name, val):
+    def updateUnlockable(self, name, val):
         if not self.game in self.GAMES:
             return
 
-        offsets = self.ITEM_OFFSETS[self.game]
+        offsets = self.UNLOCKABLE_DATA[self.game]
         if not name in offsets:
             return
 

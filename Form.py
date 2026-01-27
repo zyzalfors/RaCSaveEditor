@@ -8,12 +8,12 @@ from RaCSave import RaCSave
 
 class Form(tkinter.Tk):
     TYPES = ("bin file", "*.bin")
-    SHIFT = 21
 
 
     def __init__(self):
         super().__init__()
         self.save = None
+        self.menu = None;
         self.labels = []
         self.textboxes = []
         self.comboboxes = []
@@ -24,20 +24,19 @@ class Form(tkinter.Tk):
 
     def initGUI(self):
         self.title("RaC Save Editor")
-        self.geometry("410x720")
+        self.geometry("690x720")
         self.resizable(False, False)
 
         menuBar = tkinter.Menu(self)
-
         fileMenu = tkinter.Menu(menuBar, tearoff = False)
         fileMenu.add_command(label = "Open", command = self.open)
-        fileMenu.add_command(label = "Update", command = self.update)
-        fileMenu.add_command(label = "Close and update", command = self.closeAndUpdate)
-        fileMenu.add_command(label = "Close", command = self.close)
+        fileMenu.add_command(label = "Update", state = "disabled", command = self.update)
+        fileMenu.add_command(label = "Close and update", state = "disabled", command = self.closeAndUpdate)
+        fileMenu.add_command(label = "Close", state = "disabled", command = self.close)
         fileMenu.add_command(label = "Exit", command = self.destroy)
-
         menuBar.add_cascade(label = "File", menu = fileMenu)
         self.config(menu = menuBar)
+        self.menu = fileMenu
 
 
     def open(self):
@@ -60,7 +59,8 @@ class Form(tkinter.Tk):
             msg = "\n".join(["Invalid checksum:", f"Offset: {chunk[0]}", f"Checksum offset: {chunk[1]}", f"Data offset: {chunk[2]}", f"Data size: {chunk[3]}", "Update save to fix checksum."])
             tkinter.messagebox.showerror("Error", msg)
 
-        self.disposeTab()
+        self.setCommands(False)
+        self.disposeTabs()
         self.initTabs()
 
 
@@ -75,12 +75,12 @@ class Form(tkinter.Tk):
             self.save.updateValue(combobox.name, combobox.getVal())
 
         for checkbox in self.checkboxes:
-            self.save.updateItem(checkbox.name, bool(checkbox.isChecked()))
+            self.save.updateUnlockable(checkbox.name, bool(checkbox.isChecked()))
 
         self.save.update()
         tkinter.messagebox.showinfo("Info", "Save updated.")
 
-        self.disposeTab()
+        self.disposeTabs()
         self.initTabs()
 
 
@@ -91,66 +91,88 @@ class Form(tkinter.Tk):
 
     def close(self):
         self.save = None
-        self.disposeTab()
+        self.setCommands(True)
+        self.disposeTabs()
+
+
+    def setCommands(self, dis):
+        state = "disabled" if dis else "normal"
+        self.menu.entryconfig(1, state = state)
+        self.menu.entryconfig(2, state = state)
+        self.menu.entryconfig(3, state = state)
 
 
     def initTabs(self):
-        nb = ttk.Notebook(self)
-        nb.pack(expand = True, fill = "both")
-        self.notebook = nb
+        notebook = ttk.Notebook(self)
+        notebook.pack(expand = True, fill = "both")
+        self.notebook = notebook
 
-        valuesTab = ttk.Frame(nb)
-        nb.add(valuesTab, text = "Values")
-
-        y = 0
-        x = 130
+        valuesTab = ttk.Frame(notebook)
+        notebook.add(valuesTab, text = "Values")
 
         label = tkinter.Label(valuesTab, text = "Path:")
-        label.place(anchor = "nw", y = y)
+        label.place(anchor = "nw", x = 0, y = 0)
         self.labels.append(label)
-        self.textboxes.append(Textbox(valuesTab, "path", x, y, self.save.path, True))
 
-        y += self.SHIFT
+        textbox = Textbox(valuesTab, "path", self.save.path, True)
+        textbox.place(anchor = "nw", x = 130, y = 0)
+        self.textboxes.append(textbox)
+
         label = tkinter.Label(valuesTab, text = "Game:")
-        label.place(anchor = "nw", y = y)
+        label.place(anchor = "nw", x = 350, y = 0)
         self.labels.append(label)
-        self.textboxes.append(Textbox(valuesTab, "game", x, y, self.save.game, True))
 
-        for value in self.save.getValues():
-            name = value[0]
-            val = value[1]
+        textbox = Textbox(valuesTab, "game", self.save.game, True)
+        textbox.place(anchor = "nw", x = 480, y = 0)
+        self.textboxes.append(textbox)
 
-            y += self.SHIFT
+        values = self.save.getValues()
+        for i in range(len(values)):
+            name = values[i][0]
+            val = values[i][1]
+
+            x = 0 if i % 2 == 0 else 350
+            y = 42 + 21 * i if i % 2 == 0 else 42 + 21 * (i - 1)
+
             label = tkinter.Label(valuesTab, text = name + ":")
-            label.place(anchor = "nw", y = y)
+            label.place(anchor = "nw", x = x, y = y)
             self.labels.append(label)
 
             if name == "Language":
-                self.comboboxes.append(Combobox(valuesTab, name, x, y, val, self.save.LANGUAGES.keys()))
+                combobox = Combobox(valuesTab, name, val, self.save.LANGUAGES.keys())
+                combobox.place(anchor = "nw", x = x + 130, y = y)
+                self.comboboxes.append(combobox)
 
             elif name == "Armor":
-                self.comboboxes.append(Combobox(valuesTab, name, x, y, val, self.save.ARMORS.keys()))
+                combobox = Combobox(valuesTab, name, val, self.save.ARMORS.keys())
+                combobox.place(anchor = "nw", x = x + 130, y = y)
+                self.comboboxes.append(combobox)
 
             else:
-                self.textboxes.append(Textbox(valuesTab, name, x, y, val, False))
+                textbox = Textbox(valuesTab, name, val, False)
+                textbox.place(anchor = "nw", x = x + 130, y = y)
+                self.textboxes.append(textbox)
 
-        itemsTab = ttk.Frame(nb)
-        nb.add(itemsTab, text = "Items")
+        unlockablesTab = ttk.Frame(notebook)
+        notebook.add(unlockablesTab, text = "Unlockables")
 
-        y = 0
-        items = self.save.getItems()
-        for i in range(len(items)):
-            check = Checkbox(itemsTab, items[i][0], items[i][1])
+        unlockables = self.save.getUnlockables()
+        for i in range(len(unlockables)):
+            check = Checkbox(unlockablesTab, unlockables[i][0], unlockables[i][1])
+
+            if i % 3 == 0:
+                check.place(x = 0, y = 8 * i)
+
+            elif i % 3 == 1:
+                check.place(x = 145, y = 8 * (i - 1))
+
+            else:
+                check.place(x = 290, y = 8 * (i - 2))
+
             self.checkboxes.append(check)
 
-            if i % 2 == 0:
-                check.place(x = 0, y = y + 10 * i)
 
-            else:
-                check.place(x = 145, y = y + 10 * (i - 1))
-
-
-    def disposeTab(self):
+    def disposeTabs(self):
         for label in self.labels:
             label.destroy()
 
