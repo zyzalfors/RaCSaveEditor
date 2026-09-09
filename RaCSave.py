@@ -77,7 +77,7 @@ class RaCSave:
         self.game = game.lower()
 
         with open(path, "rb") as f:
-            self.bytes = bytearray(f.read())
+            self.data = bytearray(f.read())
 
         self.readChunks()
 
@@ -86,8 +86,8 @@ class RaCSave:
         self.chunks = []
         offset = 8
 
-        while offset < len(self.bytes):
-            size = int.from_bytes(self.bytes[offset:(offset + 4)], byteorder = "little")
+        while offset < len(self.data):
+            size = int.from_bytes(self.data[offset:(offset + 4)], byteorder = "little")
             crc16Offset = offset + 4
             dataOffset = offset + 8
             self.chunks.append((offset, crc16Offset, dataOffset, size))
@@ -100,7 +100,7 @@ class RaCSave:
             size = chunk[3]
 
             crc16 = 0x8320
-            for byte in self.bytes[dataOffset:(dataOffset + size)]:
+            for byte in self.data[dataOffset:(dataOffset + size)]:
                 crc16 ^= byte << 8
 
                 for _ in range(8):
@@ -111,7 +111,7 @@ class RaCSave:
             crc16Offset = chunk[1]
 
             for i in range(2):
-                self.bytes[crc16Offset + i] = crc16Bytes[i]
+                self.data[crc16Offset + i] = crc16Bytes[i]
 
 
     def checkCrc16(self):
@@ -120,7 +120,7 @@ class RaCSave:
             size = chunk[3]
 
             crc16 = 0x8320
-            for byte in self.bytes[dataOffset:(dataOffset + size)]:
+            for byte in self.data[dataOffset:(dataOffset + size)]:
                 crc16 ^= byte << 8
 
                 for _ in range(8):
@@ -128,7 +128,7 @@ class RaCSave:
 
             crc16 &= 0xFFFF
             crc16Offset = chunk[1]
-            readCrc16 = int.from_bytes(self.bytes[crc16Offset:(crc16Offset + 2)], byteorder = "little")
+            readCrc16 = int.from_bytes(self.data[crc16Offset:(crc16Offset + 2)], byteorder = "little")
 
             if crc16 != readCrc16:
                 return chunk, False
@@ -144,11 +144,11 @@ class RaCSave:
 
         if self.game != "rac4":
             for name, offset in self.UNLOCKABLE_DATA[self.game].items():
-                unlockables.append((name, self.bytes[offset]))
+                unlockables.append((name, self.data[offset]))
 
         else:
             for name, offset in self.UNLOCKABLE_DATA[self.game].items():
-                val = int.from_bytes(self.bytes[offset:(offset + 2)], byteorder = "little")
+                val = int.from_bytes(self.data[offset:(offset + 2)], byteorder = "little")
                 unlockables.append((name, int(val != 65535)))
 
         return unlockables
@@ -165,17 +165,17 @@ class RaCSave:
         offset = offsets[name]
 
         if self.game != "rac4":
-            self.bytes[offset] = 1 if val else 0
+            self.data[offset] = 1 if val else 0
 
         else:
             if val:
                 for i in range(2):
-                    if self.bytes[offset + i] == 255:
-                        self.bytes[offset + i] = 0
+                    if self.data[offset + i] == 255:
+                        self.data[offset + i] = 0
 
             else:
                 for i in range(2):
-                    self.bytes[offset + i] = 255
+                    self.data[offset + i] = 255
 
 
     def getValues(self):
@@ -187,7 +187,7 @@ class RaCSave:
         for name, data in self.VALUE_DATA[self.game].items():
             offset = data[0]
             size = data[1]
-            val = int.from_bytes(self.bytes[offset:(offset + size)], byteorder = "little")
+            val = int.from_bytes(self.data[offset:(offset + size)], byteorder = "little")
 
             if name == "Bolts Multiplier" and self.game != "rac2":
                 val += 1
@@ -235,14 +235,14 @@ class RaCSave:
                 val = 0
 
         offset = data[name][0]
-        bytes = val.to_bytes(size, byteorder = "little")
+        data = val.to_bytes(size, byteorder = "little")
 
         for i in range(size):
-            self.bytes[offset + i] = bytes[i]
+            self.data[offset + i] = data[i]
 
 
     def update(self):
         self.updateCrc16()
 
         with open(self.path, "wb") as f:
-            f.write(self.bytes)
+            f.write(self.data)
