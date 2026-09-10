@@ -87,26 +87,31 @@ class RaCSave:
         offset = 8
 
         while offset < len(self.data):
-            size = int.from_bytes(self.data[offset:(offset + 4)], byteorder = "little")
+            size = int.from_bytes(self.data[offset:offset + 4], byteorder = "little")
             crc16Offset = offset + 4
             dataOffset = offset + 8
             self.chunks.append((offset, crc16Offset, dataOffset, size))
             offset = dataOffset + size
 
 
+    def calcCrc16(self, chunk):
+        dataOffset = chunk[2]
+        size = chunk[3]
+
+        crc16 = 0x8320
+        for byte in self.data[dataOffset:dataOffset + size]:
+            crc16 ^= byte << 8
+
+            for _ in range(8):
+                crc16 = (crc16 << 1) ^ 0x1F45 if crc16 & 0x8000 else crc16 << 1
+
+        crc16 &= 0xFFFF
+        return crc16
+
+
     def updateCrc16(self):
         for chunk in self.chunks:
-            dataOffset = chunk[2]
-            size = chunk[3]
-
-            crc16 = 0x8320
-            for byte in self.data[dataOffset:(dataOffset + size)]:
-                crc16 ^= byte << 8
-
-                for _ in range(8):
-                    crc16 = (crc16 << 1) ^ 0x1F45 if crc16 & 0x8000 else crc16 << 1
-
-            crc16 &= 0xFFFF
+            crc16 = self.calcCrc16(chunk)
             crc16Bytes = crc16.to_bytes(2, byteorder = "little")
             crc16Offset = chunk[1]
 
@@ -116,19 +121,9 @@ class RaCSave:
 
     def checkCrc16(self):
         for chunk in self.chunks:
-            dataOffset = chunk[2]
-            size = chunk[3]
-
-            crc16 = 0x8320
-            for byte in self.data[dataOffset:(dataOffset + size)]:
-                crc16 ^= byte << 8
-
-                for _ in range(8):
-                    crc16 = (crc16 << 1) ^ 0x1F45 if crc16 & 0x8000 else crc16 << 1
-
-            crc16 &= 0xFFFF
+            crc16 = self.calcCrc16(chunk)
             crc16Offset = chunk[1]
-            readCrc16 = int.from_bytes(self.data[crc16Offset:(crc16Offset + 2)], byteorder = "little")
+            readCrc16 = int.from_bytes(self.data[crc16Offset:crc16Offset + 2], byteorder = "little")
 
             if crc16 != readCrc16:
                 return chunk, False
@@ -148,7 +143,7 @@ class RaCSave:
 
         else:
             for name, offset in self.UNLOCKABLE_DATA[self.game].items():
-                val = int.from_bytes(self.data[offset:(offset + 2)], byteorder = "little")
+                val = int.from_bytes(self.data[offset:offset + 2], byteorder = "little")
                 unlockables.append((name, int(val != 65535)))
 
         return unlockables
@@ -187,7 +182,7 @@ class RaCSave:
         for name, data in self.VALUE_DATA[self.game].items():
             offset = data[0]
             size = data[1]
-            val = int.from_bytes(self.data[offset:(offset + size)], byteorder = "little")
+            val = int.from_bytes(self.data[offset:offset + size], byteorder = "little")
 
             if name == "Bolts Multiplier" and self.game != "rac2":
                 val += 1
@@ -211,7 +206,8 @@ class RaCSave:
         if not name in data:
             return
 
-        size = data[name][1]
+        val = re.sub(r"\s+", "", val)
+
         if name == "Language":
             if not val in self.LANGUAGES:
                 return
@@ -226,6 +222,9 @@ class RaCSave:
 
         else:
             val = re.sub(r"[^0-9]", "", val)
+            if not val:
+                return
+
             val = min(int(val), data[name][2])
 
             if name == "Bolts Multiplier" and self.game != "rac2":
@@ -234,6 +233,7 @@ class RaCSave:
             if val < 0:
                 val = 0
 
+        size = data[name][1]
         offset = data[name][0]
         data = val.to_bytes(size, byteorder = "little")
 

@@ -1,6 +1,5 @@
 import tkinter
-from tkinter import filedialog
-from tkinter import ttk
+from tkinter import filedialog, messagebox, simpledialog, ttk
 from Checkbox import Checkbox
 from Textbox import Textbox
 from Combobox import Combobox
@@ -13,7 +12,7 @@ class Form(tkinter.Tk):
     def __init__(self):
         super().__init__()
         self.save = None
-        self.menu = None;
+        self.menu = None
         self.labels = []
         self.textboxes = []
         self.comboboxes = []
