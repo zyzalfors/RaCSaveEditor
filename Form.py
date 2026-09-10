@@ -39,16 +39,16 @@ class Form(tkinter.Tk):
 
 
     def open(self):
-        path = tkinter.filedialog.askopenfilename(title = "Open", filetypes = [self.TYPES])
+        path = filedialog.askopenfilename(title = "Open", filetypes = [self.TYPES])
         if path == "":
             return
 
-        game = tkinter.simpledialog.askstring(title = None, prompt = f"Enter game ({', '.join(RaCSave.GAMES)}):")
+        game = simpledialog.askstring(title = None, prompt = f"Enter game ({', '.join(RaCSave.GAMES)}):")
         if game:
             game = game.strip().lower()
 
         if not game in RaCSave.GAMES:
-            tkinter.messagebox.showerror("Error", "Invalid game.")
+            messagebox.showerror("Error", "Invalid game.")
             return
 
         self.save = RaCSave(path, game)
@@ -56,7 +56,7 @@ class Form(tkinter.Tk):
         chunk, check = self.save.checkCrc16()
         if chunk and not check:
             msg = "\n".join(["Invalid checksum:", f"Offset: {chunk[0]}", f"Checksum offset: {chunk[1]}", f"Data offset: {chunk[2]}", f"Data size: {chunk[3]}", "Update save to fix checksum."])
-            tkinter.messagebox.showerror("Error", msg)
+            messagebox.showerror("Error", msg)
 
         self.setCommands(False)
         self.disposeTabs()
@@ -77,7 +77,7 @@ class Form(tkinter.Tk):
             self.save.updateUnlockable(checkbox.name, bool(checkbox.isChecked()))
 
         self.save.update()
-        tkinter.messagebox.showinfo("Info", "Save updated.")
+        messagebox.showinfo("Info", "Save updated.")
 
         self.disposeTabs()
         self.initTabs()
@@ -172,25 +172,11 @@ class Form(tkinter.Tk):
 
 
     def disposeTabs(self):
-        for label in self.labels:
-            label.destroy()
-
-        self.labels.clear()
-
-        for textbox in self.textboxes:
-            textbox.destroy()
-
-        self.textboxes.clear()
-
-        for combobox in self.comboboxes:
-            combobox.destroy()
-
-        self.comboboxes.clear()
-
-        for checkbox in self.checkboxes:
-            checkbox.destroy()
-
-        self.checkboxes.clear()
-
         if self.notebook:
             self.notebook.destroy()
+            self.notebook = None
+
+        self.labels.clear()
+        self.textboxes.clear()
+        self.comboboxes.clear()
+        self.checkboxes.clear()
