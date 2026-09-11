@@ -5,7 +5,7 @@ from Textbox import Textbox
 from Combobox import Combobox
 from RaCSave import RaCSave
 
-class Form(tkinter.Tk):
+class RaCSaveEditorForm(tkinter.Tk):
     TYPES = ("bin file", "*.bin")
 
 
