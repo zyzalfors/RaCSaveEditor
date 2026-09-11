@@ -69,7 +69,7 @@ class RaCSaveEditorForm(tkinter.Tk):
 
         except Exception:
             messagebox.showerror("Error", "Unable to open save.")
-            self.close();
+            self.close()
 
 
     def update(self):
