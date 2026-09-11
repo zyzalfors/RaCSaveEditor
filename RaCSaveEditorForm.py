@@ -47,20 +47,32 @@ class RaCSaveEditorForm(tkinter.Tk):
         if game:
             game = game.strip().lower()
 
+        if not game:
+            messagebox.showerror("Error", "Enter a valid game.")
+            return
+
         if not game in RaCSave.GAMES:
             messagebox.showerror("Error", "Invalid game.")
             return
 
-        self.save = RaCSave(path, game)
+        try:
+            self.save = RaCSave(path, game)
 
-        chunk, check = self.save.checkCrc16()
-        if chunk and not check:
-            msg = "\n".join(["Invalid checksum:", f"Offset: {chunk[0]}", f"Checksum offset: {chunk[1]}", f"Data offset: {chunk[2]}", f"Data size: {chunk[3]}", "Update save to fix checksum."])
-            messagebox.showerror("Error", msg)
+            chunk, check = self.save.checkCrc16()
+            if chunk and not check:
+                msg = "\n".join(["Invalid checksum:", f"Offset: {chunk[0]}", f"Checksum offset: {chunk[1]}", f"Data offset: {chunk[2]}", f"Data size: {chunk[3]}", "Update save to fix checksum."])
+                messagebox.showerror("Error", msg)
 
-        self.setCommands(False)
-        self.disposeTabs()
-        self.initTabs()
+            self.setCommands(False)
+            self.disposeTabs()
+            self.initTabs()
+
+        except Exception as ex:
+            messagebox.showerror("Error", "Unable to open save.")
+
+        finally:
+            self.save = None
+            self.setCommands(True)
 
 
     def update(self):
