@@ -68,9 +68,8 @@ class RaCSaveEditorForm(tkinter.Tk):
             self.initTabs()
 
         except Exception:
-            self.save = None
-            self.setCommands(True)
             messagebox.showerror("Error", "Unable to open save.")
+            self.close();
 
 
     def update(self):
