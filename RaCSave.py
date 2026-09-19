@@ -72,6 +72,7 @@ class RaCSave:
                        "rac4": {"Arbiter": 3172, "Fusion Rifle": 3240, "Hunter Mine Launcher": 3308, "B6-Obliterator": 3376, "Holoshield Launcher": 3444,
                                 "Miniturret Launcher": 3512, "Harbinger": 3580, "Scorpion Flail": 3920}}
 
+
     def __init__(self, path, game):
         self.path = path
         self.game = game.lower()
