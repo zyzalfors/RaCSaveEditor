@@ -7,25 +7,25 @@ class RaCSave:
 
     ARMORS = {"None": 0, "1st": 1, "2nd": 2, "3rd": 3, "4th": 4}
 
-    VALUE_DATA = {"rac1": {"Bolts": (36, 4, 2147483647), "Completed": (48, 1, 255), "Bomb Glove": (324, 4, 2147483647), "Devastator": (328, 4, 2147483647), "Visibomb Gun": (336, 4, 2147483647),
-                           "Blaster": (344, 4, 2147483647), "Pyrocitor": (348, 4, 2147483647), "Mine Glove": (352, 4, 2147483647), "Tesla Claw": (360, 4, 2147483647), "Glove of Doom": (364, 4, 2147483647),
-                           "RYNO": (376, 4, 2147483647), "Drone Device": (380, 4, 2147483647), "Decoy Glove": (384, 4, 2147483647)},
+    VALUE_DATA = {"rac1": {"Bolts": (36, 4, 2147483647), "Completed": (48, 1, 255), "Bomb Glove ammo": (324, 4, 2147483647), "Devastator ammo": (328, 4, 2147483647), "Visibomb Gun ammo": (336, 4, 2147483647),
+                           "Blaster ammo": (344, 4, 2147483647), "Pyrocitor ammo": (348, 4, 2147483647), "Mine Glove ammo": (352, 4, 2147483647), "Tesla Claw ammo": (360, 4, 2147483647), "Glove of Doom ammo": (364, 4, 2147483647),
+                           "RYNO ammo": (376, 4, 2147483647), "Drone Device ammo": (380, 4, 2147483647), "Decoy Glove ammo": (384, 4, 2147483647)},
                   "rac2": {"Bolts": (36, 4, 2147483647), "Raritanium": (40, 4, 2147483647), "Completed": (54, 1, 255), "Nanotech": (56, 4, 204778415), "Armor": (68, 1, 4), "Crystals": (70, 2, 32767),
-                           "Moonstones": (72, 2, 65535), "Bolts Multiplier": (94, 1, 255), "Clank Zapper": (460, 4, 2147483647), "Bomb Glove": (472, 4, 2147483647), "Visibomb Gun": (480, 4, 2147483647),
-                           "Decoy Glove": (492, 4, 2147483647), "Tesla Claw": (496, 4, 2147483647), "Chopper": (512, 4, 2147483647), "Pulse Rifle": (516, 4, 2147483647), "Seeker Gun": (520, 4, 2147483647),
-                           "Hoverbomb Gun": (524, 4, 2147483647), "Blitz Gun": (528, 4, 2147483647), "Minirocket Tube": (532, 4, 2147483647), "Plasma Coil": (536, 4, 2147483647), "Lava Gun": (540, 4, 2147483647),
-                           "Lancer": (544, 4, 2147483647), "Synthenoid": (548, 4, 2147483647), "Spiderbot Glove": (552, 4, 2147483647), "Bouncer": (572, 4, 2147483647), "Miniturret Glove": (588, 4, 2147483647),
-                           "Gravity Bomb": (592, 4, 2147483647), "Zodiac": (596, 4, 2147483647), "RYNO II": (600, 4, 2147483647), "Shield Charger": (604, 4, 2147483647), "Language": (6264, 1, 5)},
+                           "Moonstones": (72, 2, 65535), "Bolts Multiplier": (94, 1, 255), "Clank Zapper ammo": (460, 4, 2147483647), "Bomb Glove ammo": (472, 4, 2147483647), "Visibomb Gun ammo": (480, 4, 2147483647),
+                           "Decoy Glove ammo": (492, 4, 2147483647), "Tesla Claw ammo": (496, 4, 2147483647), "Chopper ammo": (512, 4, 2147483647), "Pulse Rifle ammo": (516, 4, 2147483647), "Seeker Gun ammo": (520, 4, 2147483647),
+                           "Hoverbomb Gun ammo": (524, 4, 2147483647), "Blitz Gun ammo": (528, 4, 2147483647), "Minirocket Tube ammo": (532, 4, 2147483647), "Plasma Coil ammo": (536, 4, 2147483647), "Lava Gun ammo": (540, 4, 2147483647),
+                           "Lancer ammo": (544, 4, 2147483647), "Synthenoid ammo": (548, 4, 2147483647), "Spiderbot Glove ammo": (552, 4, 2147483647), "Bouncer ammo": (572, 4, 2147483647), "Miniturret Glove ammo": (588, 4, 2147483647),
+                           "Gravity Bomb ammo": (592, 4, 2147483647), "Zodiac ammo": (596, 4, 2147483647), "RYNO II ammo": (600, 4, 2147483647), "Shield Charger ammo": (604, 4, 2147483647), "Language": (6264, 1, 5)},
                   "rac3": {"Bolts": (36, 4, 2147483647), "Completed": (86, 1, 255), "Nanotech": (88, 4, 61503510), "Armor": (100, 1, 4), "Crystals": (102, 2, 32767), "Bolts Multiplier": (126, 1, 255),
-                           "Plasma Coil": (624, 4, 2147483647), "Lava Gun": (628, 4, 2147483647), "Bouncer": (636, 4, 2147483647), "Miniturret Glove": (644, 4, 2147483647), "Shield Charger": (648, 4, 2147483647),
-                           "Shock Blaster": (716, 4, 2147483647), "N60 Storm": (748, 4, 2147483647), "Infector": (780, 4, 2147483647), "Annihilator": (812, 4, 2147483647), "Spitting Hydra": (844, 4, 2147483647),
-                           "Disc Blade Gun": (876, 4, 2147483647), "Glove of Doom": (908, 4, 2147483647), "Rift Inducer": (940, 4, 2147483647), "Holoshield Glove": (972, 4, 2147483647), "Flux Rifle": (1004, 4, 2147483647),
-                           "Nitro Launcher": (1036, 4, 2147483647), "Plasma Whip": (1068, 4, 2147483647), "RYNO III": (1164, 4, 2147483647), "Language": (11279, 1, 5)},
+                           "Plasma Coil ammo": (624, 4, 2147483647), "Lava Gun ammo": (628, 4, 2147483647), "Bouncer ammo": (636, 4, 2147483647), "Miniturret Glove ammo": (644, 4, 2147483647), "Shield Charger ammo": (648, 4, 2147483647),
+                           "Shock Blaster ammo": (716, 4, 2147483647), "N60 Storm ammo": (748, 4, 2147483647), "Infector ammo": (780, 4, 2147483647), "Annihilator ammo": (812, 4, 2147483647), "Spitting Hydra ammo": (844, 4, 2147483647),
+                           "Disc Blade Gun ammo": (876, 4, 2147483647), "Glove of Doom ammo": (908, 4, 2147483647), "Rift Inducer ammo": (940, 4, 2147483647), "Holoshield Glove ammo": (972, 4, 2147483647), "Flux Rifle ammo": (1004, 4, 2147483647),
+                           "Nitro Launcher ammo": (1036, 4, 2147483647), "Plasma Whip ammo": (1068, 4, 2147483647), "RYNO III ammo": (1164, 4, 2147483647), "Language": (11279, 1, 5)},
                   "rac4": {"Bolts": (36, 4, 2147483647), "Nanotech": (44, 4, 45281245), "Dread Points": (48, 4, 2147483647), "Bolts Multiplier": (66, 1, 255), "Speed Mod": (325, 1, 127),
                            "Ammo Mod": (326, 1, 127), "Aiming Mod": (327, 1, 127), "Impact Mod": (328, 1, 127), "Area Mod": (329, 1, 127), "XP Mod": (330, 1, 127),
-                           "Jackpot Mod": (331, 1, 127), "Nanoleech Mod": (332, 1, 127), "Dual Vipers": (3038, 2, 32767), "Magma Cannon": (3106, 2, 32767), "Arbiter": (3174, 2, 32767),
-                           "Fusion Rifle": (3242, 2, 32767), "Hunter Mine Launcher": (3310, 2, 32767), "B6-Obliterator": (3378, 2, 32767), "Holoshield Launcher": (3446, 2, 32767), "Miniturret Launcher": (3514, 2, 32767),
-                           "Harbinger": (3582, 2, 32767), "Scorpion Flail": (3922, 2, 32767), "Language": (30785, 1, 5)}}
+                           "Jackpot Mod": (331, 1, 127), "Nanoleech Mod": (332, 1, 127), "Dual Vipers ammo": (3038, 2, 32767), "Magma Cannon ammo": (3106, 2, 32767), "Arbiter ammo": (3174, 2, 32767),
+                           "Fusion Rifle ammo": (3242, 2, 32767), "Hunter Mine Launcher ammo": (3310, 2, 32767), "B6-Obliterator ammo": (3378, 2, 32767), "Holoshield Launcher ammo": (3446, 2, 32767), "Miniturret Launcher ammo": (3514, 2, 32767),
+                           "Harbinger ammo": (3582, 2, 32767), "Scorpion Flail ammo": (3922, 2, 32767), "Language": (30785, 1, 5)}}
 
     UNLOCKABLE_DATA = {"rac1": {"Zoomerator": 88, "Raritanium": 89, "CodeBot": 90, "Skill point 1": 244, "Skill point 2": 245,
                                 "Skill point 3": 246, "Skill point 4": 247, "Skill point 5": 248, "Skill point 6": 249, "Skill point 7": 250,
@@ -77,7 +77,10 @@ class RaCSave:
         self.path = path
         self.game = game.lower()
 
-        with open(path, "rb") as f:
+        if self.game not in self.GAMES:
+            raise ValueError(f"Invalid game '{self.game}'")
+
+        with open(self.path, "rb") as f:
             self.data = bytearray(f.read())
 
         self.readChunks()
@@ -112,21 +115,19 @@ class RaCSave:
 
     def updateCrc16(self):
         for chunk in self.chunks:
-            crc16 = self.calcCrc16(chunk)
-            crc16Bytes = crc16.to_bytes(2, byteorder = "little")
+            crc16Bytes = self.calcCrc16(chunk).to_bytes(2, byteorder = "little")
             crc16Offset = chunk[1]
 
             for i in range(2):
                 self.data[crc16Offset + i] = crc16Bytes[i]
 
 
-    def checkCrc16(self):
+    def validCrc16(self):
         for chunk in self.chunks:
-            crc16 = self.calcCrc16(chunk)
             crc16Offset = chunk[1]
             readCrc16 = int.from_bytes(self.data[crc16Offset:crc16Offset + 2], byteorder = "little")
 
-            if crc16 != readCrc16:
+            if self.calcCrc16(chunk) != readCrc16:
                 return chunk, False
 
         return None, True
@@ -135,28 +136,22 @@ class RaCSave:
     def getUnlockables(self):
         unlockables = []
 
-        if not self.game in self.GAMES:
-            return unlockables
-
         if self.game != "rac4":
             for name, offset in self.UNLOCKABLE_DATA[self.game].items():
-                unlockables.append((name, self.data[offset]))
+                unlockables.append((name, bool(self.data[offset])))
 
         else:
             for name, offset in self.UNLOCKABLE_DATA[self.game].items():
                 val = int.from_bytes(self.data[offset:offset + 2], byteorder = "little")
-                unlockables.append((name, int(val != 65535)))
+                unlockables.append((name, val != 65535))
 
         return unlockables
 
 
     def updateUnlockable(self, name, val):
-        if not self.game in self.GAMES:
-            return
-
         offsets = self.UNLOCKABLE_DATA[self.game]
-        if not name in offsets:
-            return
+        if name not in offsets:
+            raise ValueError(f"Invalid unlockable '{name}'")
 
         offset = offsets[name]
 
@@ -177,16 +172,12 @@ class RaCSave:
     def getValues(self):
         values = []
 
-        if not self.game in self.GAMES:
-            return values
-
         for name, data in self.VALUE_DATA[self.game].items():
             offset = data[0]
             size = data[1]
             val = int.from_bytes(self.data[offset:offset + size], byteorder = "little")
 
-            if name == "Bolts Multiplier" and self.game != "rac2":
-                val += 1
+            if name == "Bolts Multiplier" and self.game != "rac2": val += 1
 
             elif name == "Language":
                 val = next((lang for lang, byte in self.LANGUAGES.items() if byte == val), "")
@@ -200,46 +191,33 @@ class RaCSave:
 
 
     def updateValue(self, name, val):
-        if not self.game in self.GAMES:
-            return
-
         data = self.VALUE_DATA[self.game]
-        if not name in data:
-            return
-
-        val = re.sub(r"\s+", "", val)
+        if name not in data:
+            raise ValueError(f"Invalid value '{name}'")
 
         if name == "Language":
-            if not val in self.LANGUAGES:
-                return
+            if val not in self.LANGUAGES:
+                raise ValueError(f"Invalid language '{val}'")
 
             val = self.LANGUAGES[val]
 
         elif name == "Armor":
-            if not val in self.ARMORS:
-                return
+            if val not in self.ARMORS:
+                raise ValueError(f"Invalid armor '{val}'")
 
             val = self.ARMORS[val]
 
         else:
-            val = re.sub(r"[^0-9]", "", val)
-            if not val:
-                return
-
             val = min(int(val), data[name][2])
-
-            if name == "Bolts Multiplier" and self.game != "rac2":
-                val -= 1
-
-            if val < 0:
-                val = 0
+            if name == "Bolts Multiplier" and self.game != "rac2": val -= 1
+            if val < 0: val = 0
 
         size = data[name][1]
         offset = data[name][0]
-        data = val.to_bytes(size, byteorder = "little")
+        valBytes = val.to_bytes(size, byteorder = "little")
 
         for i in range(size):
-            self.data[offset + i] = data[i]
+            self.data[offset + i] = valBytes[i]
 
 
     def update(self):
