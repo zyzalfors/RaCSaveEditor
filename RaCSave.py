@@ -7,21 +7,26 @@ class RaCSave:
 
     ARMORS = {"None": 0, "1st": 1, "2nd": 2, "3rd": 3, "4th": 4}
 
-    VALUE_DATA = {"rac1": {"Bolts": (36, 4, 2147483647), "Completed": (48, 1, 255), "Bomb Glove ammo": (324, 4, 2147483647), "Devastator ammo": (328, 4, 2147483647), "Visibomb Gun ammo": (336, 4, 2147483647),
+    LEVELS = {"rac1": {"Kyzil Plateau 1": 0, "Tobruk Crater": 1, "Outpost X11": 2, "Metropolis": 3, "Logging Site": 4, "Blackwater City": 5, "Blarg Tactical Research Station": 6, "Qwark HQ": 7, "Fort Krontos": 8, "Blarg Depot": 9, "Kogor Refinery": 10, "Jowai Resort": 11, "Bomb Factory": 12, "Gemlik Base": 13, "Gorda City": 14, "Robot Factory": 15, "Gadgetron Site": 16, "Drek Fleet": 17, "Kyzil Plateau 2": 18},
+              "rac2": {"Flying Lab 1": 0, "Megacorp Outlet": 1, "Maktar Resort": 2, "Megapolis": 3, "Vukovar Canyon": 4, "Feltzin System": 5, "Canal City": 6, "Frozen Base": 7, "Mining Area": 8, "Testing Facility": 9, "Deep Space Disposal Facility": 10, "Megacorp Games": 11, "Megacorp Armory": 12, "Silver City": 13, "Flying Lab 2": 14, "Thugs-4-Less Fleet": 15, "Thugs-4-Less HQ": 16, "Distribution Facility": 17, "Allgon City": 18, "Tundor Wastes": 19, "Protopet Factory": 20, "Insomniac Museum": 21, "Dobbo Moon": 22, "Allgon Moon": 23, "Slim Cognito Ship Shack": 24, "Wupash Nebula": 25, "Jamming Array": 26},
+              "rac3": {"Kyzil Plateau": 1, "Nabla Forest": 2, "Starship Phoenix": 3, "Capital City": 4, "Research Facility": 5, "Starship Phoenix Under Attack": 6, "Annihilation Nation": 7, "Deep Sea Hideout": 8, "Korgon Base": 9, "Zeldrin Starport": 10, "Obani Gemini": 11, "Blackwater City": 12, "Holostar Studios": 13, "Nefarious BFG": 14, "Metropolis": 16, "Crash Site": 17, "Outpost X12": 18, "Qwark Hideout": 19, "Launch Site": 20, "Obani Draco": 21, "Command Center": 22},
+              "rac4": {"DreadZone Station": 1, "Catacrom Graveyard": 2, "Sarathos Swamp Romp": 4, "Dark Cathedral": 5, "Temple of Shaar": 6, "Valix Lighthouse Network": 7, "Mining Facility": 8, "Torval Ruins": 10, "Tempus Control Station": 11, "Maraxus Prison": 13, "Ghost Station": 14}}
+
+    VALUE_DATA = {"rac1": {"Level": (24, 1, 18), "Bolts": (36, 4, 2147483647), "Completed": (48, 1, 255), "Bomb Glove ammo": (324, 4, 2147483647), "Devastator ammo": (328, 4, 2147483647), "Visibomb Gun ammo": (336, 4, 2147483647),
                            "Blaster ammo": (344, 4, 2147483647), "Pyrocitor ammo": (348, 4, 2147483647), "Mine Glove ammo": (352, 4, 2147483647), "Tesla Claw ammo": (360, 4, 2147483647), "Glove of Doom ammo": (364, 4, 2147483647),
                            "RYNO ammo": (376, 4, 2147483647), "Drone Device ammo": (380, 4, 2147483647), "Decoy Glove ammo": (384, 4, 2147483647)},
-                  "rac2": {"Bolts": (36, 4, 2147483647), "Raritanium": (40, 4, 2147483647), "Completed": (54, 1, 255), "Nanotech": (56, 4, 204778415), "Armor": (68, 1, 4), "Crystals": (70, 2, 32767),
+                  "rac2": {"Level": (24, 1, 26), "Bolts": (36, 4, 2147483647), "Raritanium": (40, 4, 2147483647), "Completed": (54, 1, 255), "Nanotech": (56, 4, 204778415), "Armor": (68, 1, 4), "Crystals": (70, 2, 32767),
                            "Moonstones": (72, 2, 65535), "Bolts Multiplier": (94, 1, 255), "Clank Zapper ammo": (460, 4, 2147483647), "Bomb Glove ammo": (472, 4, 2147483647), "Visibomb Gun ammo": (480, 4, 2147483647),
                            "Decoy Glove ammo": (492, 4, 2147483647), "Tesla Claw ammo": (496, 4, 2147483647), "Chopper ammo": (512, 4, 2147483647), "Pulse Rifle ammo": (516, 4, 2147483647), "Seeker Gun ammo": (520, 4, 2147483647),
                            "Hoverbomb Gun ammo": (524, 4, 2147483647), "Blitz Gun ammo": (528, 4, 2147483647), "Minirocket Tube ammo": (532, 4, 2147483647), "Plasma Coil ammo": (536, 4, 2147483647), "Lava Gun ammo": (540, 4, 2147483647),
                            "Lancer ammo": (544, 4, 2147483647), "Synthenoid ammo": (548, 4, 2147483647), "Spiderbot Glove ammo": (552, 4, 2147483647), "Bouncer ammo": (572, 4, 2147483647), "Miniturret Glove ammo": (588, 4, 2147483647),
                            "Gravity Bomb ammo": (592, 4, 2147483647), "Zodiac ammo": (596, 4, 2147483647), "RYNO II ammo": (600, 4, 2147483647), "Shield Charger ammo": (604, 4, 2147483647), "Language": (6264, 1, 5)},
-                  "rac3": {"Bolts": (36, 4, 2147483647), "Completed": (86, 1, 255), "Nanotech": (88, 4, 61503510), "Armor": (100, 1, 4), "Crystals": (102, 2, 32767), "Bolts Multiplier": (126, 1, 255),
+                  "rac3": {"Level": (24, 1, 22), "Bolts": (36, 4, 2147483647), "Completed": (86, 1, 255), "Nanotech": (88, 4, 61503510), "Armor": (100, 1, 4), "Crystals": (102, 2, 32767), "Bolts Multiplier": (126, 1, 255),
                            "Plasma Coil ammo": (624, 4, 2147483647), "Lava Gun ammo": (628, 4, 2147483647), "Bouncer ammo": (636, 4, 2147483647), "Miniturret Glove ammo": (644, 4, 2147483647), "Shield Charger ammo": (648, 4, 2147483647),
                            "Shock Blaster ammo": (716, 4, 2147483647), "N60 Storm ammo": (748, 4, 2147483647), "Infector ammo": (780, 4, 2147483647), "Annihilator ammo": (812, 4, 2147483647), "Spitting Hydra ammo": (844, 4, 2147483647),
                            "Disc Blade Gun ammo": (876, 4, 2147483647), "Glove of Doom ammo": (908, 4, 2147483647), "Rift Inducer ammo": (940, 4, 2147483647), "Holoshield Glove ammo": (972, 4, 2147483647), "Flux Rifle ammo": (1004, 4, 2147483647),
                            "Nitro Launcher ammo": (1036, 4, 2147483647), "Plasma Whip ammo": (1068, 4, 2147483647), "RYNO III ammo": (1164, 4, 2147483647), "Language": (11279, 1, 5)},
-                  "rac4": {"Bolts": (36, 4, 2147483647), "Nanotech": (44, 4, 45281245), "Dread Points": (48, 4, 2147483647), "Bolts Multiplier": (66, 1, 255), "Speed Mod": (325, 1, 127),
+                  "rac4": {"Level": (24, 1, 14), "Bolts": (36, 4, 2147483647), "Nanotech": (44, 4, 45281245), "Dread Points": (48, 4, 2147483647), "Bolts Multiplier": (66, 1, 255), "Speed Mod": (325, 1, 127),
                            "Ammo Mod": (326, 1, 127), "Aiming Mod": (327, 1, 127), "Impact Mod": (328, 1, 127), "Area Mod": (329, 1, 127), "XP Mod": (330, 1, 127),
                            "Jackpot Mod": (331, 1, 127), "Nanoleech Mod": (332, 1, 127), "Dual Vipers ammo": (3038, 2, 32767), "Magma Cannon ammo": (3106, 2, 32767), "Arbiter ammo": (3174, 2, 32767),
                            "Fusion Rifle ammo": (3242, 2, 32767), "Hunter Mine Launcher ammo": (3310, 2, 32767), "B6-Obliterator ammo": (3378, 2, 32767), "Holoshield Launcher ammo": (3446, 2, 32767), "Miniturret Launcher ammo": (3514, 2, 32767),
@@ -179,6 +184,9 @@ class RaCSave:
 
             if name == "Bolts Multiplier" and self.game != "rac2": val += 1
 
+            elif name == "Level":
+                val = next((level for level, byte in self.LEVELS[self.game].items() if byte == val), "")
+
             elif name == "Language":
                 val = next((lang for lang, byte in self.LANGUAGES.items() if byte == val), "")
 
@@ -195,7 +203,13 @@ class RaCSave:
         if name not in data:
             raise ValueError(f"Invalid value '{name}'")
 
-        if name == "Language":
+        if name == "Level":
+            if val not in self.LEVELS[self.game]:
+                raise ValueError(f"Invalid level '{val}'")
+
+            val = self.LEVELS[self.game][val]
+
+        elif name == "Language":
             if val not in self.LANGUAGES:
                 raise ValueError(f"Invalid language '{val}'")
 

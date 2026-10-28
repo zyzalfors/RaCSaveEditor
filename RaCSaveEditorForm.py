@@ -9,7 +9,6 @@ class RaCSaveEditorForm(tkinter.Tk):
 
     def __init__(self, path):
         super().__init__()
-        self.data = {}
         self.save = None
         self.initGUI()
         self.open(path, False)
@@ -58,6 +57,7 @@ class RaCSaveEditorForm(tkinter.Tk):
             return
 
         try:
+            self.data = {}
             self.save = RaCSave(path, game)
 
             chunk, valid = self.save.validCrc16()
@@ -164,7 +164,13 @@ class RaCSaveEditorForm(tkinter.Tk):
             label = tkinter.Label(tab.content, text = f"{name}:")
             label.place(x = x, y = y)
 
-            if name == "Language":
+            if name == "Level":
+                combo = Combobox(tab.content, tuple(self.save.LEVELS[self.save.game].keys()), 24)
+                combo.place(x = x + deltaText, y = y)
+                combo.setVal(val)
+                self.data[name] = combo
+
+            elif name == "Language":
                 combo = Combobox(tab.content, tuple(self.save.LANGUAGES.keys()), 24)
                 combo.place(x = x + deltaText, y = y)
                 combo.setVal(val)
