@@ -16,17 +16,17 @@ class RaCSave:
                            "Blaster ammo": (344, 4, 2147483647), "Pyrocitor ammo": (348, 4, 2147483647), "Mine Glove ammo": (352, 4, 2147483647), "Tesla Claw ammo": (360, 4, 2147483647), "Glove of Doom ammo": (364, 4, 2147483647),
                            "RYNO ammo": (376, 4, 2147483647), "Drone Device ammo": (380, 4, 2147483647), "Decoy Glove ammo": (384, 4, 2147483647)},
                   "rac2": {"Level": (24, 1, 26), "Bolts": (36, 4, 2147483647), "Raritanium": (40, 4, 2147483647), "Completed": (54, 1, 255), "Nanotech": (56, 4, 204778415), "Armor": (68, 1, 4), "Crystals": (70, 2, 32767),
-                           "Moonstones": (72, 2, 65535), "Bolts Multiplier": (94, 1, 255), "Clank Zapper ammo": (460, 4, 2147483647), "Bomb Glove ammo": (472, 4, 2147483647), "Visibomb Gun ammo": (480, 4, 2147483647),
+                           "Moonstones": (72, 2, 65535), "Bolt Multiplier": (94, 1, 255), "Clank Zapper ammo": (460, 4, 2147483647), "Bomb Glove ammo": (472, 4, 2147483647), "Visibomb Gun ammo": (480, 4, 2147483647),
                            "Decoy Glove ammo": (492, 4, 2147483647), "Tesla Claw ammo": (496, 4, 2147483647), "Chopper ammo": (512, 4, 2147483647), "Pulse Rifle ammo": (516, 4, 2147483647), "Seeker Gun ammo": (520, 4, 2147483647),
                            "Hoverbomb Gun ammo": (524, 4, 2147483647), "Blitz Gun ammo": (528, 4, 2147483647), "Minirocket Tube ammo": (532, 4, 2147483647), "Plasma Coil ammo": (536, 4, 2147483647), "Lava Gun ammo": (540, 4, 2147483647),
                            "Lancer ammo": (544, 4, 2147483647), "Synthenoid ammo": (548, 4, 2147483647), "Spiderbot Glove ammo": (552, 4, 2147483647), "Bouncer ammo": (572, 4, 2147483647), "Miniturret Glove ammo": (588, 4, 2147483647),
                            "Gravity Bomb ammo": (592, 4, 2147483647), "Zodiac ammo": (596, 4, 2147483647), "RYNO II ammo": (600, 4, 2147483647), "Shield Charger ammo": (604, 4, 2147483647), "Language": (6264, 1, 5)},
-                  "rac3": {"Level": (24, 1, 22), "Bolts": (36, 4, 2147483647), "Completed": (86, 1, 255), "Nanotech": (88, 4, 61503510), "Armor": (100, 1, 4), "Crystals": (102, 2, 32767), "Bolts Multiplier": (126, 1, 255),
+                  "rac3": {"Level": (24, 1, 22), "Bolts": (36, 4, 2147483647), "Completed": (86, 1, 255), "Nanotech": (88, 4, 61503510), "Armor": (100, 1, 4), "Crystals": (102, 2, 32767), "Bolt Multiplier": (126, 1, 255),
                            "Plasma Coil ammo": (624, 4, 2147483647), "Lava Gun ammo": (628, 4, 2147483647), "Bouncer ammo": (636, 4, 2147483647), "Miniturret Glove ammo": (644, 4, 2147483647), "Shield Charger ammo": (648, 4, 2147483647),
                            "Shock Blaster ammo": (716, 4, 2147483647), "N60 Storm ammo": (748, 4, 2147483647), "Infector ammo": (780, 4, 2147483647), "Annihilator ammo": (812, 4, 2147483647), "Spitting Hydra ammo": (844, 4, 2147483647),
                            "Disc Blade Gun ammo": (876, 4, 2147483647), "Glove of Doom ammo": (908, 4, 2147483647), "Rift Inducer ammo": (940, 4, 2147483647), "Holoshield Glove ammo": (972, 4, 2147483647), "Flux Rifle ammo": (1004, 4, 2147483647),
                            "Nitro Launcher ammo": (1036, 4, 2147483647), "Plasma Whip ammo": (1068, 4, 2147483647), "RYNO III ammo": (1164, 4, 2147483647), "Language": (11279, 1, 5)},
-                  "rac4": {"Level": (24, 1, 14), "Bolts": (36, 4, 2147483647), "Nanotech": (44, 4, 45281245), "Dread Points": (48, 4, 2147483647), "Bolts Multiplier": (66, 1, 255), "Speed Mod": (325, 1, 127),
+                  "rac4": {"Level": (24, 1, 14), "Bolts": (36, 4, 2147483647), "Nanotech": (44, 4, 45281245), "Dread Points": (48, 4, 2147483647), "Bolt Multiplier": (66, 1, 255), "Speed Mod": (325, 1, 127),
                            "Ammo Mod": (326, 1, 127), "Aiming Mod": (327, 1, 127), "Impact Mod": (328, 1, 127), "Area Mod": (329, 1, 127), "XP Mod": (330, 1, 127),
                            "Jackpot Mod": (331, 1, 127), "Nanoleech Mod": (332, 1, 127), "Dual Vipers ammo": (3038, 2, 32767), "Magma Cannon ammo": (3106, 2, 32767), "Arbiter ammo": (3174, 2, 32767),
                            "Fusion Rifle ammo": (3242, 2, 32767), "Hunter Mine Launcher ammo": (3310, 2, 32767), "B6-Obliterator ammo": (3378, 2, 32767), "Holoshield Launcher ammo": (3446, 2, 32767), "Miniturret Launcher ammo": (3514, 2, 32767),
@@ -211,7 +211,7 @@ class RaCSave:
             size = data[1]
             val = int.from_bytes(self.data[offset:offset + size], byteorder = "little")
 
-            if name == "Bolts Multiplier" and self.game != "rac2": val += 1
+            if name == "Bolt Multiplier" and self.game != "rac2": val += 1
 
             elif name == "Level":
                 val = next((level for level, byte in self.LEVELS[self.game].items() if byte == val), "")
@@ -252,7 +252,7 @@ class RaCSave:
 
         else:
             val = min(int(val), data[name][2])
-            if name == "Bolts Multiplier" and self.game != "rac2": val -= 1
+            if name == "Bolt Multiplier" and self.game != "rac2": val -= 1
             if val < 0: val = 0
 
         size = data[name][1]
