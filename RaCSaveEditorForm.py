@@ -38,7 +38,12 @@ class RaCSaveEditorForm(tkinter.Tk):
         fileMenu.add_command(label = "Close", state = "disabled", command = self.close)
         self.fileMenu = fileMenu
 
+        shortcutMenu = tkinter.Menu(menuBar, tearoff = False)
+        shortcutMenu.add_command(label = "All unlockables", state = "disabled", command = self.setAllUnlockables)
+        self.shortcutMenu = shortcutMenu
+
         menuBar.add_cascade(label = "File", menu = fileMenu)
+        menuBar.add_cascade(label = "Shortcut", menu = shortcutMenu)
         self.config(menu = menuBar)
 
 
@@ -109,6 +114,7 @@ class RaCSaveEditorForm(tkinter.Tk):
         self.fileMenu.entryconfig(1, state = state)
         self.fileMenu.entryconfig(2, state = state)
         self.fileMenu.entryconfig(3, state = state)
+        self.shortcutMenu.entryconfig(1, state = state)
 
 
     def askConfirmForLoadedSave(self):
@@ -190,7 +196,7 @@ class RaCSaveEditorForm(tkinter.Tk):
 
 
     def initUnlockablesTab(self):
-        tab = Tab(self.notebook, 720, 730)
+        tab = Tab(self.notebook, 720, 1050)
         self.notebook.add(tab, text = "Unlockables")
 
         unlockables = self.save.getUnlockables()
@@ -201,14 +207,15 @@ class RaCSaveEditorForm(tkinter.Tk):
             check.setVal(val)
             self.data[name] = check
 
-            if i % 3 == 0:
-                check.place(x = 0, y = 8 * i)
+            col = i % 5
+            row = i // 5
+            check.place(x = 145 * col, y = 30 * row)
 
-            elif i % 3 == 1:
-                check.place(x = 145, y = 8 * (i - 1))
 
-            else:
-                check.place(x = 290, y = 8 * (i - 2))
+    def setAllUnlockables(self):
+        for name in self.data:
+            if isinstance(self.data[name], Checkbox):
+                self.data[name].setVal(True)
 
 
     def disposeTabs(self):

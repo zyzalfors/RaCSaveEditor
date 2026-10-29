@@ -74,8 +74,10 @@ class RaCSave:
                                 "Spitting Hydra": 1263, "Disc Blade Gun": 1271, "Glove of Doom": 1279, "Rift Inducer": 1287, "Holoshield Glove": 1295,
                                 "Flux Rifle": 1303, "Nitro Launcher": 1311, "Plasma Whip": 1319, "Suck Cannon": 1327, "Qwack-o-ray": 1335,
                                 "RYNO III": 1343},
-                       "rac4": {"Arbiter": 3172, "Fusion Rifle": 3240, "Hunter Mine Launcher": 3308, "B6-Obliterator": 3376, "Holoshield Launcher": 3444,
-                                "Miniturret Launcher": 3512, "Harbinger": 3580, "Scorpion Flail": 3920}}
+                       "rac4": {"Skill points 1": 224, "Skill points 2": 228, "Skill points 3": 236, "Skill points 4": 240, "Skill points 5": 244,
+                                "Skill points 6": 248, "Skill points 7": 252, "Skill points 8": 260, "Skill points 9": 264, "Skill points 10": 272,
+                                "Skill points 11": 276, "Arbiter": 3172, "Fusion Rifle": 3240, "Hunter Mine Launcher": 3308, "B6-Obliterator": 3376,
+                                "Holoshield Launcher": 3444, "Miniturret Launcher": 3512, "Harbinger": 3580, "Scorpion Flail": 3920}}
 
 
     def __init__(self, path, game):
@@ -147,31 +149,58 @@ class RaCSave:
 
         else:
             for name, offset in self.UNLOCKABLE_DATA[self.game].items():
-                val = int.from_bytes(self.data[offset:offset + 2], byteorder = "little")
-                unlockables.append((name, val != 65535))
+                m = re.fullmatch(r"Skill points (\d+)", name)
+                if m:
+                    j = int(m.group(1))
+                    unlockables.extend([(f"Skill point {j}-{i + 1}", bool((self.data[offset] >> i) & 1)) for i in range(8)])
+                    unlockables.extend([(f"Skill point {j}-{i + 9}", bool((self.data[offset + 1] >> i) & 1)) for i in range(7)])
+
+                else:
+                    unlockables.append((name, int.from_bytes(self.data[offset:offset + 2], byteorder = "little") != 65535))
 
         return unlockables
 
 
     def updateUnlockable(self, name, val):
         offsets = self.UNLOCKABLE_DATA[self.game]
-        if name not in offsets:
-            raise ValueError(f"Invalid unlockable '{name}'")
-
-        offset = offsets[name]
 
         if self.game != "rac4":
+            if name not in offsets:
+                raise ValueError(f"Invalid unlockable '{name}'")
+
+            offset = offsets[name]
             self.data[offset] = 1 if val else 0
 
         else:
-            if val:
-                for i in range(2):
-                    if self.data[offset + i] == 255:
-                        self.data[offset + i] = 0
+            m = re.fullmatch(r"Skill point (\d+)-(\d+)", name)
+            if m:
+                i, j = map(int, m.groups())
+                if i not in range(1, 12) or j not in range(1, 16):
+                    raise ValueError(f"Invalid unlockable '{name}'")
+
+                j -= 1
+                k = 0 if j < 8 else 1
+                j = j % 8
+                mask = 1 << j
+
+                offset = offsets[f"Skill points {i}"]
+                b = int(self.data[offset + k])
+                b = (b | mask) if val else (b & ~mask)
+                self.data[offset + k] = b & 0xFF
 
             else:
-                for i in range(2):
-                    self.data[offset + i] = 255
+                if name not in offsets:
+                    raise ValueError(f"Invalid unlockable '{name}'")
+
+                offset = offsets[name]
+                if val:
+                    for i in range(2):
+                        if self.data[offset + i] == 255:
+                            self.data[offset + i] = 0
+
+                else:
+                    for i in range(2):
+                        self.data[offset + i] = 255
 
 
     def getValues(self):
