@@ -44,7 +44,15 @@ class RaCSave:
                                 "Pyrocitor": 456, "Mine Glove": 457, "Walloper": 458, "Tesla Claw": 459, "Glove of Doom": 460,
                                 "Morph-o-ray": 461, "Hydrodisplacer": 462, "RYNO": 463, "Drone Device": 464, "Decoy Glove": 465,
                                 "Trespasser": 466, "Metal Detector": 467, "Magneboots": 468, "Grind Boots": 469, "Hoverboard": 470,
-                                "Hologuise": 471, "PDA": 472, "Map-o-matic": 473, "Bolt Grabber": 474, "Persuader": 475},
+                                "Hologuise": 471, "PDA": 472, "Map-o-matic": 473, "Bolt Grabber": 474, "Persuader": 475,
+                                "Gold bolt 1": 10240, "Gold bolt 2": 10241, "Gold bolt 3": 10242, "Gold bolt 4": 12964, "Gold bolt 5": 12965,
+                                "Gold bolt 6": 12966, "Gold bolt 7": 12967, "Gold bolt 8": 15688, "Gold bolt 9": 15689, "Gold bolt 10": 15690,
+                                "Gold bolt 11": 18412, "Gold bolt 12": 21136, "Gold bolt 13": 21137, "Gold bolt 14": 23860, "Gold bolt 15": 23861,
+                                "Gold bolt 16": 26584, "Gold bolt 17": 26585, "Gold bolt 18": 29308, "Gold bolt 19": 29309, "Gold bolt 20": 32032,
+                                "Gold bolt 21": 32033, "Gold bolt 22": 34756, "Gold bolt 23": 34757, "Gold bolt 24": 37480, "Gold bolt 25": 40204,
+                                "Gold bolt 26": 40205, "Gold bolt 27": 42928, "Gold bolt 28": 45652, "Gold bolt 29": 45653, "Gold bolt 30": 45654,
+                                "Gold bolt 31": 45655, "Gold bolt 32": 48376, "Gold bolt 33": 48377, "Gold bolt 34": 51100, "Gold bolt 35": 51101,
+                                "Gold bolt 36": 53824, "Gold bolt 37": 53825, "Gold bolt 38": 56548, "Gold bolt 39": 56549, "Gold bolt 40": 56550},
                        "rac2": {"Nanotech Boost 1": 84, "Nanotech Boost 2": 85, "Nanotech Boost 3": 86, "Nanotech Boost 4": 87, "Nanotech Boost 5": 88,
                                 "Nanotech Boost 6": 89, "Nanotech Boost 7": 90, "Nanotech Boost 8": 91, "Nanotech Boost 9": 92, "Nanotech Boost 10": 93,
                                 "Skill point 1": 384, "Skill point 2": 385, "Skill point 3": 386, "Skill point 4": 387, "Skill point 5": 388,
@@ -106,8 +114,7 @@ class RaCSave:
 
 
     def calcCrc16(self, chunk):
-        dataOffset = chunk[2]
-        size = chunk[3]
+        dataOffset, size = chunk[2], chunk[3]
 
         crc16 = 0x8320
         for byte in self.data[dataOffset:dataOffset + size]:
@@ -207,8 +214,7 @@ class RaCSave:
         values = []
 
         for name, data in self.VALUE_DATA[self.game].items():
-            offset = data[0]
-            size = data[1]
+            offset, size = data[0], data[1]
             val = int.from_bytes(self.data[offset:offset + size], byteorder = "little")
 
             if name == "Bolt Multiplier" and self.game != "rac2": val += 1
@@ -255,8 +261,7 @@ class RaCSave:
             if name == "Bolt Multiplier" and self.game != "rac2": val -= 1
             if val < 0: val = 0
 
-        size = data[name][1]
-        offset = data[name][0]
+        offset, size = data[name][0], data[name][1]
         valBytes = val.to_bytes(size, byteorder = "little")
 
         for i in range(size):
