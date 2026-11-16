@@ -3,7 +3,7 @@ This GUI tool allows users to read and edit save files for the PlayStation 2 gam
 
 The tool can read and modify several game parameters:
 - Ratchet & Clank: current level, bolts, completion times, ammo, skill points, gold bolts, and weapon/item unlocks
-- Ratchet & Clank 2: current level, bolts, completion times, raritanium, nanotech, armor, crystals, moonstones, bolt multiplier, ammo, language, skill points, platinum golts, and weapon/item unlocks
+- Ratchet & Clank 2: current level, bolts, completion times, raritanium, nanotech, armor, crystals, moonstones, bolt multiplier, ammo, language, skill points, platinum bolts, and weapon/item unlocks
 - Ratchet & Clank 3: current level, bolts, completion times, nanotech, armor, crystals, bolt multiplier, ammo, language, skill points, titanium bolts, and weapon/item unlocks
 - Ratchet Gladiator/Deadlocked: current level, bolts, nanotech, Dread points, bolt multiplier, mods, ammo, language, skill points, and weapon/item unlocks
 
