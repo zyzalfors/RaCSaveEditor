@@ -2,7 +2,7 @@
 This GUI tool allows users to read and edit save files for the PlayStation 2 games Ratchet & Clank, Ratchet & Clank 2, Ratchet & Clank 3, Ratchet Gladiator/Deadlocked. The tool supports reading and editing .bin raw save data, which can be extracted from various formats, such as .cbs, .max, .psv, .psu, .sbs, and .xps.
 
 The tool can read and modify several game parameters:
-- Ratchet & Clank: current level, bolts, completion times, ammo, skill points, gold bolts, and weapon/item unlocks
+- Ratchet & Clank: current level, bolts, completion times, nanotech, ammo, skill points, gold bolts, and weapon/item unlocks
 - Ratchet & Clank 2: current level, bolts, completion times, raritanium, nanotech, armor, crystals, moonstones, bolt multiplier, ammo, language, skill points, platinum bolts, and weapon/item unlocks
 - Ratchet & Clank 3: current level, bolts, completion times, nanotech, armor, crystals, bolt multiplier, ammo, language, skill points, titanium bolts, and weapon/item unlocks
 - Ratchet Gladiator/Deadlocked: current level, bolts, nanotech, Dread points, bolt multiplier, mods, ammo, language, skill points, and weapon/item unlocks
@@ -12,5 +12,6 @@ Additional useful resources include:
 - https://github.com/myname24/vita-slims-editor
 - https://github.com/RatchetModding/slimseditor
 - https://github.com/maikelwever/rac-savegame-editor
+- https://github.com/primetime43/Ratchet-Clank-Save-Editor
 - https://github.com/stiantoften/RC-checksum
 - https://docs.google.com/spreadsheets/d/1uZBCG_QkMCzCIdYgSZr1CfKIFTNrRYJrNMuQDCtAOWo/preview

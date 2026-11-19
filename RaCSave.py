@@ -14,7 +14,7 @@ class RaCSave:
 
     VALUE_DATA = {"rac1": {"Level": (24, 1, 18), "Bolts": (36, 4, 2147483647), "Completed": (48, 1, 255), "Bomb Glove ammo": (324, 4, 2147483647), "Devastator ammo": (328, 4, 2147483647), "Visibomb Gun ammo": (336, 4, 2147483647),
                            "Blaster ammo": (344, 4, 2147483647), "Pyrocitor ammo": (348, 4, 2147483647), "Mine Glove ammo": (352, 4, 2147483647), "Tesla Claw ammo": (360, 4, 2147483647), "Glove of Doom ammo": (364, 4, 2147483647),
-                           "RYNO ammo": (376, 4, 2147483647), "Drone Device ammo": (380, 4, 2147483647), "Decoy Glove ammo": (384, 4, 2147483647)},
+                           "RYNO ammo": (376, 4, 2147483647), "Drone Device ammo": (380, 4, 2147483647), "Decoy Glove ammo": (384, 4, 2147483647), "Nanotech": (596, 1, 255)},
                   "rac2": {"Level": (24, 1, 26), "Bolts": (36, 4, 2147483647), "Raritanium": (40, 4, 2147483647), "Completed": (54, 1, 255), "Nanotech": (56, 4, 204778415), "Armor": (68, 1, 4), "Crystals": (70, 2, 32767),
                            "Moonstones": (72, 2, 65535), "Bolt Multiplier": (94, 1, 255), "Clank Zapper ammo": (460, 4, 2147483647), "Bomb Glove ammo": (472, 4, 2147483647), "Visibomb Gun ammo": (480, 4, 2147483647),
                            "Decoy Glove ammo": (492, 4, 2147483647), "Tesla Claw ammo": (496, 4, 2147483647), "Chopper ammo": (512, 4, 2147483647), "Pulse Rifle ammo": (516, 4, 2147483647), "Seeker Gun ammo": (520, 4, 2147483647),
@@ -32,7 +32,7 @@ class RaCSave:
                            "Fusion Rifle ammo": (3242, 2, 32767), "Hunter Mine Launcher ammo": (3310, 2, 32767), "B6-Obliterator ammo": (3378, 2, 32767), "Holoshield Launcher ammo": (3446, 2, 32767), "Miniturret Launcher ammo": (3514, 2, 32767),
                            "Harbinger ammo": (3582, 2, 32767), "Scorpion Flail ammo": (3922, 2, 32767), "Language": (30785, 1, 5)}}
 
-    UNLOCKABLE_DATA = {"rac1": {"Zoomerator": 88, "Raritanium": 89, "CodeBot": 90, "Skill point 1": 244, "Skill point 2": 245,
+    UNLOCKABLE_DATA = {"rac1": {"Zoomerator": 88, "Raritanium": 89, "CodeBot": 90, "Premium Nanotech": 92, "Ultra Nanotech": 93, "Skill point 1": 244, "Skill point 2": 245,
                                 "Skill point 3": 246, "Skill point 4": 247, "Skill point 5": 248, "Skill point 6": 249, "Skill point 7": 250,
                                 "Skill point 8": 251, "Skill point 9": 252, "Skill point 10": 253, "Skill point 11": 254, "Skill point 12": 255,
                                 "Skill point 13": 256, "Skill point 14": 257, "Skill point 15": 258, "Skill point 16": 259, "Skill point 17": 260,
@@ -45,6 +45,8 @@ class RaCSave:
                                 "Morph-o-ray": 461, "Hydrodisplacer": 462, "RYNO": 463, "Drone Device": 464, "Decoy Glove": 465,
                                 "Trespasser": 466, "Metal Detector": 467, "Magneboots": 468, "Grind Boots": 469, "Hoverboard": 470,
                                 "Hologuise": 471, "PDA": 472, "Map-o-matic": 473, "Bolt Grabber": 474, "Persuader": 475,
+                                "Gold Suck Cannon": 4577, "Gold Bomb Glove": 4578, "Gold Devastator": 4579, "Gold Blaster": 4583, "Gold Pyrocitor": 4584,
+                                "Gold Mine Glove": 4585, "Gold Tesla Claw": 4587, "Gold Glove of Doom": 4588, "Gold Morph-o-ray": 4589, "Gold Decoy Glove": 4593,
                                 "Gold bolt 1": 10240, "Gold bolt 2": 10241, "Gold bolt 3": 10242, "Gold bolt 4": 12964, "Gold bolt 5": 12965,
                                 "Gold bolt 6": 12966, "Gold bolt 7": 12967, "Gold bolt 8": 15688, "Gold bolt 9": 15689, "Gold bolt 10": 15690,
                                 "Gold bolt 11": 18412, "Gold bolt 12": 21136, "Gold bolt 13": 21137, "Gold bolt 14": 23860, "Gold bolt 15": 23861,
